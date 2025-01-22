@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rentoza</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <style>
+        #intro {
+      background-image: url("https://rentoza.co.za/cdn/shop/files/DoW_Desktop_Hero.webp?v=1734938609&width=1080");
+      height: 100vh;
+    }
+      </style>
+    <nav class="navbar sticky-top navbar-expand-md bg-white shadow-sm">
+      <div class="container my-4 px-4">
+        <button
+          class="navbar-toggler me-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#secondaryMenuOffcanvas"
+          aria-controls="secondaryMenuOffcanvas"
+        >
+          <i class="bi bi-list fs-3"></i>
+        </button>
+
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="//rentoza.co.za/cdn/shop/files/NewLogoDarkBlue.png?v=1709367196&amp;width=140"
+            loading="lazy"
+            width="140"
+            height="30"
+            alt="Rentoza"
+          />
+        </a>
+
+    
+        <form class="d-flex flex-grow-1 mx-4 d-none d-md-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <label class="visually-hidden" for="search-query-input">Search</label>
+          <button class="btn btn-dark" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        
+        <button
+          class="btn btn-dark d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobileSearch"
+          aria-expanded="false"
+          aria-controls="mobileSearch"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+        
+        <div class="collapse" id="mobileSearch">
+          <form class="d-flex mt-3" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-dark" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+        </div>
+        
+        <div class="d-flex align-items-center">
+          <a href="profile.html" class="text-dark me-3">
+            <i class="bi bi-person fs-4"></i>
+          </a>
+          <a href="#" class="text-dark">
+            <i class="bi bi-cart fs-4"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="bg-light  py-4 d-none d-md-block">
+      <div class="container-fluid px-4">
+        <ul class="nav justify-content-center">
+          <style>
+            li.nav-item{
+              color: rgb(35, 55, 92);
+            }
+            a.nav-link{
+              padding: 0.5rem 1.5rem !important;
+            }
+            a.nav-link:hover {
+            background: #CDCDD6;
+            border-radius: .25rem;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
+          }
+          
+          </style>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-dark" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-dark" href="#">Inventory</a>
+          </li>
+          <li class="nav-item dropdown-menu-list nav-item-mega-menu">
+            <a class="nav-link fw-bold text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Sales</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Category 1</a></li>
+              <li><a class="dropdown-item" href="#">Category 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link fw-bold text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Money</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Invoices</a></li>
+              <li><a class="dropdown-item" href="#">Payments</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link fw-bold text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sales</a></li>
+              <li><a class="dropdown-item" href="#">Inventory</a></li>
+              <li><a class="dropdown-item" href="#">Budget</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://rentoza.co.za/cdn/shop/files/B2S_Desktop_Hero_Week4.webp?v=1737449324&width=1944" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://rentoza.co.za/cdn/shop/files/HSS_Desktop_Hero_Week7.webp?v=1737436732&width=1920" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://rentoza.co.za/cdn/shop/files/NA_Desktop_Hero.webp?v=1734938525&width=1944" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://rentoza.co.za/cdn/shop/files/FS_Desktop_Hero.webp?v=1734938733&width=1080" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://rentoza.co.za/cdn/shop/files/DoW_Desktop_Hero.webp?v=1734938609&width=1080" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <div class="banner-btn-box ">
+            
+        <a href="/collections/flash-sale" class="button button-gradient large-btn m-med-btn">Shop Now</a>
+    
+    
+      </div>
+    </div>
+    
+    <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="secondaryMenuOffcanvas"
+    aria-labelledby="secondaryMenuOffcanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="secondaryMenuOffcanvasLabel">Menu</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#">Best In Class</a></li>
+        <li class="list-group-item dropdown">
+          <a
+            class="dropdown-toggle text-decoration-none"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >New Arrivals</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Item 1</a></li>
+            <li><a class="dropdown-item" href="#">Item 2</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item dropdown">
+          <a
+            class="dropdown-toggle text-decoration-none"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Shop</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Category 1</a></li>
+            <li><a class="dropdown-item" href="#">Category 2</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item dropdown">
+          <a
+            class="dropdown-toggle text-decoration-none"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >How it Works</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Step 1</a></li>
+            <li><a class="dropdown-item" href="#">Step 2</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item dropdown">
+          <a
+            class="dropdown-toggle text-decoration-none"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Blogs</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Blog 1</a></li>
+            <li><a class="dropdown-item" href="#">Blog 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</header>
+
+<main>
+  <section>
+    <h2>Our </h2>
+  </section>
+</main>
+
+    
+
+
+
+
+
+
+
+
+    <!-- Offcanvas for Secondary Menu -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
