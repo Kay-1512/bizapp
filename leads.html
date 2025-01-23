@@ -1,0 +1,1531 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leads - Analytics
+    </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="canonical" href="http://preview.keenthemes.compages/user-profile/campaigns.html" />
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+
+
+
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/fontawesome.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/footable.standalone.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/fullcalendar@5.2.0.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/leaflet.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/MarkerCluster.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/select2.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/slick.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/star-rating-svg.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/trumbowyg.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/wickedpicker.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://app.pandabot.co.za/img/favicon.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://app.pandabot.co.za/assets/css/main.css">
+
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+    <style id="apexcharts-css">
+        @keyframes opaque {
+            0% {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes resizeanim {
+
+            0%,
+            to {
+                opacity: 0
+            }
+        }
+
+        .apexcharts-canvas {
+            position: relative;
+            direction: ltr !important;
+            user-select: none
+        }
+
+        .apexcharts-canvas ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 6px
+        }
+
+        .apexcharts-canvas ::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, .5);
+            box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+            -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+        }
+
+        .apexcharts-inner {
+            position: relative
+        }
+
+        .apexcharts-text tspan {
+            font-family: inherit
+        }
+
+        rect.legend-mouseover-inactive,
+        .legend-mouseover-inactive rect,
+        .legend-mouseover-inactive path,
+        .legend-mouseover-inactive circle,
+        .legend-mouseover-inactive line,
+        .legend-mouseover-inactive text.apexcharts-yaxis-title-text,
+        .legend-mouseover-inactive text.apexcharts-yaxis-label {
+            transition: .15s ease all;
+            opacity: .2
+        }
+
+        .apexcharts-legend-text {
+            padding-left: 15px;
+            margin-left: -15px;
+        }
+
+        .apexcharts-series-collapsed {
+            opacity: 0
+        }
+
+        .apexcharts-tooltip {
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px -4px #999;
+            cursor: default;
+            font-size: 14px;
+            left: 62px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 12;
+            transition: .15s ease all
+        }
+
+        .la-angle-down:before {
+            content: "\f107";
+        }
+
+        .apexcharts-tooltip.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+        }
+
+        .apexcharts-tooltip.apexcharts-theme-light {
+            border: 1px solid #e3e3e3;
+            background: rgba(255, 255, 255, .96)
+        }
+
+        .apexcharts-tooltip.apexcharts-theme-dark {
+            color: #fff;
+            background: rgba(30, 30, 30, .8)
+        }
+
+        .apexcharts-tooltip * {
+            font-family: inherit
+        }
+
+        .apexcharts-tooltip-title {
+            padding: 6px;
+            font-size: 15px;
+            margin-bottom: 4px
+        }
+
+        .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+            background: #eceff1;
+            border-bottom: 1px solid #ddd
+        }
+
+        .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+            background: rgba(0, 0, 0, .7);
+            border-bottom: 1px solid #333
+        }
+
+        .apexcharts-tooltip-text-goals-value,
+        .apexcharts-tooltip-text-y-value,
+        .apexcharts-tooltip-text-z-value {
+            display: inline-block;
+            margin-left: 5px;
+            font-weight: 600
+        }
+
+        .apexcharts-tooltip-text-goals-label:empty,
+        .apexcharts-tooltip-text-goals-value:empty,
+        .apexcharts-tooltip-text-y-label:empty,
+        .apexcharts-tooltip-text-y-value:empty,
+        .apexcharts-tooltip-text-z-value:empty,
+        .apexcharts-tooltip-title:empty {
+            display: none
+        }
+
+        .apexcharts-tooltip-text-goals-label,
+        .apexcharts-tooltip-text-goals-value {
+            padding: 6px 0 5px
+        }
+
+        .apexcharts-tooltip-goals-group,
+        .apexcharts-tooltip-text-goals-label,
+        .apexcharts-tooltip-text-goals-value {
+            display: flex
+        }
+
+        .apexcharts-tooltip-text-goals-label:not(:empty),
+        .apexcharts-tooltip-text-goals-value:not(:empty) {
+            margin-top: -6px
+        }
+
+        .apexcharts-tooltip-marker {
+            display: inline-block;
+            position: relative;
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+            line-height: 16px;
+            margin-right: 4px;
+            text-align: center;
+            vertical-align: middle;
+            color: inherit;
+        }
+
+        .apexcharts-tooltip-marker::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            color: currentcolor;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            font-size: 26px;
+            line-height: 14px;
+            font-weight: 900;
+        }
+
+        .apexcharts-tooltip-marker[shape="circle"]::before {
+            content: "\25CF";
+        }
+
+        .apexcharts-tooltip-marker[shape="square"]::before,
+        .apexcharts-tooltip-marker[shape="rect"]::before {
+            content: "\25A0";
+            transform: translate(-1px, -2px);
+        }
+
+        .apexcharts-tooltip-marker[shape="line"]::before {
+            content: "\2500";
+        }
+
+        .apexcharts-tooltip-marker[shape="diamond"]::before {
+            content: "\25C6";
+            font-size: 28px;
+        }
+
+        .apexcharts-tooltip-marker[shape="triangle"]::before {
+            content: "\25B2";
+            font-size: 22px;
+        }
+
+        .apexcharts-tooltip-marker[shape="cross"]::before {
+            content: "\2715";
+            font-size: 18px;
+        }
+
+        .apexcharts-tooltip-marker[shape="plus"]::before {
+            content: "\2715";
+            transform: rotate(45deg) translate(-1px, -1px);
+            font-size: 18px;
+        }
+
+        .apexcharts-tooltip-marker[shape="star"]::before {
+            content: "\2605";
+            font-size: 18px;
+        }
+
+        .apexcharts-tooltip-marker[shape="sparkle"]::before {
+            content: "\2726";
+            font-size: 20px;
+        }
+
+        .apexcharts-tooltip-series-group {
+            padding: 0 10px;
+            display: none;
+            text-align: left;
+            justify-content: left;
+            align-items: center
+        }
+
+        .apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+            opacity: 1
+        }
+
+        .apexcharts-tooltip-series-group.apexcharts-active,
+        .apexcharts-tooltip-series-group:last-child {
+            padding-bottom: 4px
+        }
+
+        .apexcharts-tooltip-y-group {
+            padding: 6px 0 5px
+        }
+
+        .apexcharts-custom-tooltip,
+        .apexcharts-tooltip-box {
+            padding: 4px 8px
+        }
+
+        .apexcharts-tooltip-boxPlot {
+            display: flex;
+            flex-direction: column-reverse
+        }
+
+        .apexcharts-tooltip-box>div {
+            margin: 4px 0
+        }
+
+        .apexcharts-tooltip-box span.value {
+            font-weight: 700
+        }
+
+        .apexcharts-tooltip-rangebar {
+            padding: 5px 8px
+        }
+
+        .apexcharts-tooltip-rangebar .category {
+            font-weight: 600;
+            color: #777
+        }
+
+        .apexcharts-tooltip-rangebar .series-name {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px
+        }
+
+        .apexcharts-xaxistooltip,
+        .apexcharts-yaxistooltip {
+            opacity: 0;
+            pointer-events: none;
+            color: #373d3f;
+            font-size: 13px;
+            text-align: center;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 10;
+            background: #eceff1;
+            border: 1px solid #90a4ae
+        }
+
+        .apexcharts-xaxistooltip {
+            padding: 9px 10px;
+            transition: .15s ease all
+        }
+
+        .apexcharts-xaxistooltip.apexcharts-theme-dark {
+            background: rgba(0, 0, 0, .7);
+            border: 1px solid rgba(0, 0, 0, .5);
+            color: #fff
+        }
+
+        .apexcharts-xaxistooltip:after,
+        .apexcharts-xaxistooltip:before {
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none
+        }
+
+        .apexcharts-xaxistooltip:after {
+            border-color: transparent;
+            border-width: 6px;
+            margin-left: -6px
+        }
+
+        .apexcharts-xaxistooltip:before {
+            border-color: transparent;
+            border-width: 7px;
+            margin-left: -7px
+        }
+
+        .apexcharts-xaxistooltip-bottom:after,
+        .apexcharts-xaxistooltip-bottom:before {
+            bottom: 100%
+        }
+
+        .apexcharts-xaxistooltip-top:after,
+        .apexcharts-xaxistooltip-top:before {
+            top: 100%
+        }
+
+        .apexcharts-xaxistooltip-bottom:after {
+            border-bottom-color: #eceff1
+        }
+
+        .apexcharts-xaxistooltip-bottom:before {
+            border-bottom-color: #90a4ae
+        }
+
+        .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,
+        .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+            border-bottom-color: rgba(0, 0, 0, .5)
+        }
+
+        .apexcharts-xaxistooltip-top:after {
+            border-top-color: #eceff1
+        }
+
+        .apexcharts-xaxistooltip-top:before {
+            border-top-color: #90a4ae
+        }
+
+        .apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,
+        .apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+            border-top-color: rgba(0, 0, 0, .5)
+        }
+
+        .apexcharts-xaxistooltip.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+        }
+
+        .apexcharts-yaxistooltip {
+            padding: 4px 10px
+        }
+
+        .apexcharts-yaxistooltip.apexcharts-theme-dark {
+            background: rgba(0, 0, 0, .7);
+            border: 1px solid rgba(0, 0, 0, .5);
+            color: #fff
+        }
+
+        .apexcharts-yaxistooltip:after,
+        .apexcharts-yaxistooltip:before {
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none
+        }
+
+        .apexcharts-yaxistooltip:after {
+            border-color: transparent;
+            border-width: 6px;
+            margin-top: -6px
+        }
+
+        .apexcharts-yaxistooltip:before {
+            border-color: transparent;
+            border-width: 7px;
+            margin-top: -7px
+        }
+
+        .apexcharts-yaxistooltip-left:after,
+        .apexcharts-yaxistooltip-left:before {
+            left: 100%
+        }
+
+        .apexcharts-yaxistooltip-right:after,
+        .apexcharts-yaxistooltip-right:before {
+            right: 100%
+        }
+
+        .apexcharts-yaxistooltip-left:after {
+            border-left-color: #eceff1
+        }
+
+        .apexcharts-yaxistooltip-left:before {
+            border-left-color: #90a4ae
+        }
+
+        .apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,
+        .apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+            border-left-color: rgba(0, 0, 0, .5)
+        }
+
+        .apexcharts-yaxistooltip-right:after {
+            border-right-color: #eceff1
+        }
+
+        .apexcharts-yaxistooltip-right:before {
+            border-right-color: #90a4ae
+        }
+
+        .apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,
+        .apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+            border-right-color: rgba(0, 0, 0, .5)
+        }
+
+        .apexcharts-yaxistooltip.apexcharts-active {
+            opacity: 1
+        }
+
+        .apexcharts-yaxistooltip-hidden {
+            display: none
+        }
+
+        .apexcharts-xcrosshairs,
+        .apexcharts-ycrosshairs {
+            pointer-events: none;
+            opacity: 0;
+            transition: .15s ease all
+        }
+
+        .apexcharts-xcrosshairs.apexcharts-active,
+        .apexcharts-ycrosshairs.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+        }
+
+        .apexcharts-ycrosshairs-hidden {
+            opacity: 0
+        }
+
+        .apexcharts-selection-rect {
+            cursor: move
+        }
+
+        .svg_select_shape {
+            stroke-width: 1;
+            stroke-dasharray: 10 10;
+            stroke: black;
+            stroke-opacity: 0.1;
+            pointer-events: none;
+            fill: none;
+        }
+
+        .svg_select_handle {
+            stroke-width: 3;
+            stroke: black;
+            fill: none;
+        }
+
+        .svg_select_handle_r {
+            cursor: e-resize;
+        }
+
+        .svg_select_handle_l {
+            cursor: w-resize;
+        }
+
+        .apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+            cursor: crosshair
+        }
+
+        .apexcharts-svg.apexcharts-zoomable.hovering-pan {
+            cursor: move
+        }
+
+        .apexcharts-menu-icon,
+        .apexcharts-pan-icon,
+        .apexcharts-reset-icon,
+        .apexcharts-selection-icon,
+        .apexcharts-toolbar-custom-icon,
+        .apexcharts-zoom-icon,
+        .apexcharts-zoomin-icon,
+        .apexcharts-zoomout-icon {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            line-height: 24px;
+            color: #6e8192;
+            text-align: center
+        }
+
+        .apexcharts-menu-icon svg,
+        .apexcharts-reset-icon svg,
+        .apexcharts-zoom-icon svg,
+        .apexcharts-zoomin-icon svg,
+        .apexcharts-zoomout-icon svg {
+            fill: #6e8192
+        }
+
+        .apexcharts-selection-icon svg {
+            fill: #444;
+            transform: scale(.76)
+        }
+
+        .apexcharts-theme-dark .apexcharts-menu-icon svg,
+        .apexcharts-theme-dark .apexcharts-pan-icon svg,
+        .apexcharts-theme-dark .apexcharts-reset-icon svg,
+        .apexcharts-theme-dark .apexcharts-selection-icon svg,
+        .apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,
+        .apexcharts-theme-dark .apexcharts-zoom-icon svg,
+        .apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+        .apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+            fill: #f3f4f5
+        }
+
+        .apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,
+        .apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+        .apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+            fill: #008ffb
+        }
+
+        .apexcharts-theme-light .apexcharts-menu-icon:hover svg,
+        .apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+        .apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+        .apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+        .apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+        .apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+            fill: #333
+        }
+
+        .apexcharts-menu-icon,
+        .apexcharts-selection-icon {
+            position: relative
+        }
+
+        .apexcharts-reset-icon {
+            margin-left: 5px
+        }
+
+        .apexcharts-menu-icon,
+        .apexcharts-reset-icon,
+        .apexcharts-zoom-icon {
+            transform: scale(.85)
+        }
+
+        .apexcharts-zoomin-icon,
+        .apexcharts-zoomout-icon {
+            transform: scale(.7)
+        }
+
+        .apexcharts-zoomout-icon {
+            margin-right: 3px
+        }
+
+        .apexcharts-pan-icon {
+            transform: scale(.62);
+            position: relative;
+            left: 1px;
+            top: 0
+        }
+
+        .apexcharts-pan-icon svg {
+            fill: #fff;
+            stroke: #6e8192;
+            stroke-width: 2
+        }
+
+        .apexcharts-pan-icon.apexcharts-selected svg {
+            stroke: #008ffb
+        }
+
+        .apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+            stroke: #333
+        }
+
+        .apexcharts-toolbar {
+            position: absolute;
+            z-index: 11;
+            max-width: 176px;
+            text-align: right;
+            border-radius: 3px;
+            padding: 0 6px 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .apexcharts-menu {
+            background: #fff;
+            position: absolute;
+            top: 100%;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 3px;
+            right: 10px;
+            opacity: 0;
+            min-width: 110px;
+            transition: .15s ease all;
+            pointer-events: none
+        }
+
+        .apexcharts-menu.apexcharts-menu-open {
+            opacity: 1;
+            pointer-events: all;
+            transition: .15s ease all
+        }
+
+        .apexcharts-menu-item {
+            padding: 6px 7px;
+            font-size: 12px;
+            cursor: pointer
+        }
+
+        .apexcharts-theme-light .apexcharts-menu-item:hover {
+            background: #eee
+        }
+
+        .apexcharts-theme-dark .apexcharts-menu {
+            background: rgba(0, 0, 0, .7);
+            color: #fff
+        }
+
+        @media screen and (min-width:768px) {
+            .apexcharts-canvas:hover .apexcharts-toolbar {
+                opacity: 1
+            }
+        }
+
+        .apexcharts-canvas .apexcharts-element-hidden,
+        .apexcharts-datalabel.apexcharts-element-hidden,
+        .apexcharts-hide .apexcharts-series-points {
+            opacity: 0;
+        }
+
+        .apexcharts-hidden-element-shown {
+            opacity: 1;
+            transition: 0.25s ease all;
+        }
+
+        .apexcharts-datalabel,
+        .apexcharts-datalabel-label,
+        .apexcharts-datalabel-value,
+        .apexcharts-datalabels,
+        .apexcharts-pie-label {
+            cursor: default;
+            pointer-events: none
+        }
+
+        .apexcharts-pie-label-delay {
+            opacity: 0;
+            animation-name: opaque;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease
+        }
+
+        .apexcharts-radialbar-label {
+            cursor: pointer;
+        }
+
+        .apexcharts-annotation-rect,
+        .apexcharts-area-series .apexcharts-area,
+        .apexcharts-gridline,
+        .apexcharts-line,
+        .apexcharts-point-annotation-label,
+        .apexcharts-radar-series path:not(.apexcharts-marker),
+        .apexcharts-radar-series polygon,
+        .apexcharts-toolbar svg,
+        .apexcharts-tooltip .apexcharts-marker,
+        .apexcharts-xaxis-annotation-label,
+        .apexcharts-yaxis-annotation-label,
+        .apexcharts-zoom-rect,
+        .no-pointer-events {
+            pointer-events: none
+        }
+
+        .apexcharts-tooltip-active .apexcharts-marker {
+            transition: .15s ease all
+        }
+
+        .apexcharts-radar-series .apexcharts-yaxis {
+            pointer-events: none;
+        }
+
+        .resize-triggers {
+            animation: 1ms resizeanim;
+            visibility: hidden;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .contract-trigger:before,
+        .resize-triggers,
+        .resize-triggers>div {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .resize-triggers>div {
+            height: 100%;
+            width: 100%;
+            background: #eee;
+            overflow: auto
+        }
+
+        .contract-trigger:before {
+            overflow: hidden;
+            width: 200%;
+            height: 200%
+        }
+
+        .apexcharts-bar-goals-markers {
+            pointer-events: none
+        }
+
+        .apexcharts-bar-shadows {
+            pointer-events: none
+        }
+
+        .apexcharts-rangebar-goals-markers {
+            pointer-events: none
+        }
+    </style>
+</head>
+
+<body class="layout-light side-menu loaded">
+    <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+    <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+
+    <div class="mobile-search">
+        <form action="/" class="search-form">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="svg replaced-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..."
+                aria-label="Search">
+        </form>
+    </div>
+    <div class="mobile-author-actions"></div>
+    <header class="header-top">
+        <nav class="navbar navbar-light">
+            <div class="navbar-left">
+                <div class="logo-area">
+                    <a class="navbar-brand align-items-center" href="#">
+                        <img src="myBizApp.png" alt="">
+                    </a>
+                    <a href="#" class="sidebar-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg replaced-svg">
+                            <path fill="#525768"
+                                d="M5,8H19a1,1,0,0,0,0-2H5A1,1,0,0,0,5,8Zm16,3H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm-2,5H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z">
+                            </path>
+                        </svg></a>
+                </div>
+                <div class="top-menu">
+                    <div class="hexadash-top-menu position-relative">
+                        <ul class="d-flex align-items-center flex-wrap">
+                            <li>
+                                <a href="index.html" class="active">Dashboard</a>
+                            </li>
+
+                            <li class="has-subMenu">
+                                <a href="#" class="">Applications</a>
+                                <ul class="megaMenu-wrapper megaMenu-dropdown">
+                                    <li>
+                                        <ul>
+                                            <li class="has-subMenu-left">
+                                                <a href="#" class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="svg nav-icon replaced-svg">
+                                                        <circle cx="9" cy="21" r="1"></circle>
+                                                        <circle cx="20" cy="21" r="1"></circle>
+                                                        <path
+                                                            d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="menu-text text-initial">Companies</span>
+                                                </a>
+                                                <ul class="subMenu">
+                                                    <li>
+                                                        <a href="#" class="">Create</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="">List</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-subMenu-left">
+                                                <a href="#" class="">
+                                                    <span class="nav-icon uil uil-calendar-alt"></span>
+                                                    <span class="menu-text">Events</span>
+                                                </a>
+                                                <ul class="subMenu">
+                                                    <li>
+                                                        <a href="#" class="">Create</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="">List</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="">Reservations</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-subMenu-left">
+                                                <a href="#" class="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="svg nav-icon replaced-svg">
+                                                        <circle cx="9" cy="21" r="1"></circle>
+                                                        <circle cx="20" cy="21" r="1"></circle>
+                                                        <path
+                                                            d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="menu-text text-initial">Opportunities</span>
+                                                </a>
+                                                <ul class="subMenu">
+                                                    <li>
+                                                        <a href="#" class="">Create</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="">List</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right">
+
+                <!-- ends: .navbar-right__menu -->
+                <div class="navbar-right__mobileAction d-md-none">
+                    <a href="#" class="btn-search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="svg feather-search replaced-svg">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="svg feather-x replaced-svg">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg></a>
+                    <a href="#" class="btn-author-action">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="svg replaced-svg">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="12" cy="5" r="1"></circle>
+                            <circle cx="12" cy="19" r="1"></circle>
+                        </svg></a>
+                </div>
+                <ul class="navbar-right__menu">
+                    <li class="nav-search">
+                        <a href="#" class="search-toggle">
+                            <i class="uil uil-search"></i>
+                            <i class="uil uil-times"></i>
+                        </a>
+                        <form action="/" class="search-form-topMenu">
+                            <span class="search-icon uil uil-search"></span>
+                            <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..."
+                                aria-label="Search">
+                        </form>
+                    </li>
+                    <li class="nav-author">
+                        <div class="dropdown-custom">
+                            <a href="javascript:;" class="nav-item-toggle">
+                                <span class="avatar avatar-warning avatar-sm avatar-circle  ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="svg avatar-icon replaced-svg">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </span>
+                                <span class="nav-item__title">Michaela<i
+                                        class="las la-angle-down nav-item__arrow"></i></span>
+                            </a>
+                            <div class="dropdown-parent-wrapper">
+                                <div class="dropdown-wrapper">
+                                    <div class="nav-author__info">
+                                        <div class="author-img">
+                                            <span class="avatar avatar-warning avatar-lg avatar-circle  ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="svg avatar-icon replaced-svg">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <h6>Michaela Mc</h6>
+                                            <span>michaela@skillspanda.co.za</span>
+                                        </div>
+                                    </div>
+                                    <div class="nav-author__options">
+                                        <ul>
+
+                                            <li>
+                                                <a href="">
+                                                    <i class="uil uil-bell"></i> Help</a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://app.pandabot.co.za/logout" class="nav-author__signout"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="uil uil-sign-out-alt"></i> Sign Out
+                                        </a>
+
+                                        <form id="logout-form" action="https://app.pandabot.co.za/logout" method="POST"
+                                            style="display: none;">
+                                            <input type="hidden" name="_token"
+                                                value="7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB" autocomplete="off">
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <!-- ends: .dropdown-wrapper -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ends: .nav-author -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="sidebar-wrapper">
+            <div class="sidebar sidebar-collapse" id="sidebar">
+                <div class="sidebar__menu-group">
+                    <ul class="sidebar_nav">
+                        <li>
+                            <a href="index.html" class="active">
+                                <span class="nav-icon uil uil-create-dashboard"></span>
+                                <span class="menu-text">Dashboard</span>
+
+                            </a>
+                        </li>
+
+                        <li class="menu-title mt-30">
+                            <span>Apps</span>
+                        </li>
+
+                        <li>
+                            <a href="https://app.pandabot.co.za/leads" class="">
+                                <span class="nav-icon uil uil-bag"></span>
+                                <span class="menu-text text-initial">Clients</span>
+                            </a>
+                        </li>
+
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span class="nav-icon uil uil-calendar-alt"></span>
+                                <span class="menu-text">Events</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul style="display: none; top: 235.719px;">
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/events">Event Calendar</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="https://app.pandabot.co.za/categories" class="">
+                                <span class="nav-icon uil uil-arrow-growth"></span>
+                                <span class="menu-text text-initial">Expense Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://app.pandabot.co.za/opportunities" class="">
+                                <span class="nav-icon uil uil-arrow-growth"></span>
+                                <span class="menu-text text-initial">Opportunities</span>
+                            </a>
+                        </li>
+
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span class="nav-icon uil uil-arrow-growth"></span>
+                                <span class="menu-text text-initial">Programs</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/programs">All Programs</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span class="nav-icon uil uil-arrow-growth"></span>
+                                <span class="menu-text text-initial">Surveys</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul style="display: none;">
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/surveys">All Surveys</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/surveys/create">Create Survey</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span class="nav-icon uil uil-users-alt"></span>
+                                <span class="menu-text text-initial">Users</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul style="display: none; top: 462.516px;">
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/users">All Users</a>
+                                </li>
+                                <li class="">
+                                    <a href="https://app.pandabot.co.za/pact/participants">Participants</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="contents">
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                <!--begin::Content wrapper-->
+                <div class="d-flex flex-column flex-column-fluid">
+                    <!--begin::Toolbar-->
+                    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                        <!--begin::Toolbar container-->
+                        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                            <!--begin::Page title-->
+                            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                <!--begin::Title-->
+                                <h1
+                                    class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
+                                    View Leads</h1>
+                                <!--end::Title-->
+                                <!--begin::Breadcrumb-->
+                                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                    <!--begin::Item-->
+                                    <li class="breadcrumb-item text-muted">
+                                        <a href="index.html" class="text-muted text-hover-primary">Dashboard</a>
+                                    </li>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <li class="breadcrumb-item">
+                                        <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                    </li>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <li class="breadcrumb-item text-muted">Leads</li>
+                                    <!--end::Item-->
+                                </ul>
+                                <!--end::Breadcrumb-->
+                            </div>
+                            <!--end::Page title-->
+                        </div>
+                        <!--end::Toolbar container-->
+                    </div>
+                    <!--end::Toolbar-->
+                    <!--begin::Content-->
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <!--begin::Content container-->
+                        <div id="kt_app_content_container" class="app-container container-xxl">
+                            <!--begin::Row-->
+                            <div class="row gx-6 gx-xl-9">
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+                                    <!--begin::Summary-->
+                                    <div class="card card-flush h-lg-100">
+                                        <!--begin::Card header-->
+                                        <div class="card-header mt-6">
+                                            <!--begin::Card title-->
+                                            <div class="card-title flex-column">
+                                                <h3 class="fw-bold mb-1">Tasks Summary</h3>
+                                                <div class="fs-6 fw-semibold text-gray-500">24 Overdue Tasks</div>
+                                            </div>
+                                            <!--end::Card title-->
+                                            <!--begin::Card toolbar-->
+                                            <div class="card-toolbar">
+                                                <a href="#" class="btn btn-light btn-sm">View Tasks</a>
+                                            </div>
+                                            <!--end::Card toolbar-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body p-9 pt-5">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex flex-wrap">
+                                                <!--begin::Chart-->
+                                                <div
+                                                    class="position-relative d-flex flex-center h-175px w-175px me-15 mb-7">
+                                                    <div
+                                                        class="position-absolute translate-middle start-50 top-50 d-flex flex-column flex-center">
+                                                        <span class="fs-2qx fw-bold">237</span>
+                                                        <span class="fs-6 fw-semibold text-gray-500">Total Tasks</span>
+                                                    </div>
+                                                    <canvas id="project_overview_chart"></canvas>
+                                                </div>
+                                                <!--end::Chart-->
+                                                <!--begin::Labels-->
+                                                <div
+                                                    class="d-flex flex-column justify-content-center flex-row-fluid pe-11 mb-5">
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex fs-6 fw-semibold align-items-center mb-3">
+                                                        <div class="bullet bg-primary me-3"></div>
+                                                        <div class="text-gray-500">Active</div>
+                                                        <div class="ms-auto fw-bold text-gray-700">30</div>
+                                                    </div>
+                                                    <!--end::Label-->
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex fs-6 fw-semibold align-items-center mb-3">
+                                                        <div class="bullet bg-success me-3"></div>
+                                                        <div class="text-gray-500">Completed</div>
+                                                        <div class="ms-auto fw-bold text-gray-700">45</div>
+                                                    </div>
+                                                    <!--end::Label-->
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex fs-6 fw-semibold align-items-center mb-3">
+                                                        <div class="bullet bg-danger me-3"></div>
+                                                        <div class="text-gray-500">Overdue</div>
+                                                        <div class="ms-auto fw-bold text-gray-700">0</div>
+                                                    </div>
+                                                    <!--end::Label-->
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex fs-6 fw-semibold align-items-center">
+                                                        <div class="bullet bg-gray-300 me-3"></div>
+                                                        <div class="text-gray-500">Yet to start</div>
+                                                        <div class="ms-auto fw-bold text-gray-700">25</div>
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Labels-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                            <!--begin::Notice-->
+                                            <div
+                                                class="notice d-flex bg-light-primary rounded border-primary border border-dashed p-6">
+                                                <!--begin::Wrapper-->
+                                                <div class="d-flex flex-stack flex-grow-1">
+                                                    <!--begin::Content-->
+                                                    <div class="fw-semibold">
+                                                        <div class="fs-6 text-gray-700">
+                                                            <a href="#" class="fw-bold me-1">Invite New .NET
+                                                                Collaborators</a>to create great outstanding business to
+                                                            business .jsp modutr class scripts
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Content-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </div>
+                                            <!--end::Notice-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Summary-->
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-lg-6">
+                                    <!--begin::Graph-->
+                                    <div class="card card-flush h-lg-100">
+                                        <!--begin::Card header-->
+                                        <div class="card-header mt-6">
+                                            <!--begin::Card title-->
+                                            <div class="card-title flex-column">
+                                                <h3 class="fw-bold mb-1">Tasks Over Time</h3>
+                                                <!--begin::Labels-->
+                                                <div class="fs-6 d-flex text-gray-500 fs-6 fw-semibold">
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex align-items-center me-6">
+                                                        <span class="menu-bullet d-flex align-items-center me-2">
+                                                            <span class="bullet bg-success"></span>
+                                                        </span>Complete
+                                                    </div>
+                                                    <!--end::Label-->
+                                                    <!--begin::Label-->
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="menu-bullet d-flex align-items-center me-2">
+                                                            <span class="bullet bg-primary"></span>
+                                                        </span>Incomplete
+                                                    </div>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <!--end::Labels-->
+                                            </div>
+                                            <!--end::Card title-->
+                                            <!--begin::Card toolbar-->
+                                            <div class="card-toolbar">
+                                                <!--begin::Select-->
+                                                <select name="status" data-control="select2" data-hide-search="true"
+                                                    class="form-select form-select-solid form-select-sm fw-bold w-100px">
+                                                    <option value="1">2020 Q1</option>
+                                                    <option value="2">2020 Q2</option>
+                                                    <option value="3" selected="selected">2020 Q3</option>
+                                                    <option value="4">2020 Q4</option>
+                                                </select>
+                                                <!--end::Select-->
+                                            </div>
+                                            <!--end::Card toolbar-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-10 pb-0 px-5">
+                                            <!--begin::Chart-->
+                                            <div id="kt_project_overview_graph" class="card-rounded-bottom"
+                                                style="height: 300px"></div>
+                                            <!--end::Chart-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+                                    <!--end::Graph-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Content container-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Content wrapper-->
+            </div>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+            <script>
+                // Daily Signups Chart
+                var optionsSignups = {
+                    series: [{
+                        name: 'Daily Signups',
+                        data: [11, 44, 40, 40, 52]
+                    }],
+                    chart: {
+                        type: 'line',
+                        height: 350
+                    },
+                    xaxis: {
+                        categories: ["2025-01-19", "2025-01-20", "2025-01-21", "2025-01-22", "2025-01-23"]
+                    },
+                    stroke: {
+                        curve: 'smooth'
+                    },
+                    title: {
+                        text: 'Daily Signups',
+                        align: 'left',
+                        style: {
+                            fontFamily: 'Jost, sans-serif'
+                        }
+                    }
+                };
+
+                var signupsChart = new ApexCharts(document.querySelector("#dailySignupsChart"), optionsSignups);
+                signupsChart.render();
+
+                // Daily Applications Chart
+                var optionsApplications = {
+                    series: [{
+                        name: 'Daily Applications',
+                        data: []
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 350
+                    },
+                    xaxis: {
+                        categories: []
+                    },
+                    stroke: {
+                        width: 1,
+                    },
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shade: 'dark',
+                            type: "horizontal",
+                        }
+                    },
+                    title: {
+                        text: 'Daily Applications',
+                        align: 'left',
+                        style: {
+                            fontFamily: 'Jost, sans-serif'
+                        }
+                    }
+                };
+
+                var applicationsChart = new ApexCharts(document.querySelector("#dailyApplicationsChart"), optionsApplications);
+                applicationsChart.render();
+
+                window.Echo.private('dashboard')
+                    .listen('SessionLimitReached', (event) => {
+                        console.log(event);
+
+                        // Display the message on the dashboard
+                        const message = `${event.name} has reached their session limit.`;
+                        const notificationElement = document.getElementById('notifications');
+                        const newNotification = document.createElement('div');
+                        newNotification.innerText = message;
+                        notificationElement.appendChild(newNotification);
+                    });
+            </script>
+        </div>
+        </div>
+        </div>
+    </main>
+
+    <div id="overlayer">
+        <div class="loader-overlay">
+            <div class="dm-spin-dots spin-lg">
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-dark-sidebar"></div>
+    <div class="customizer-overlay"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/bootstrap/popper.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/moment/moment.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/accordion.js"></script>
+    <!-- <script src="https://app.pandabot.co.za/assets/vendor_assets/js/apexcharts.min.js"></script> -->
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/autoComplete.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/Chart.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/daterangepicker.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/drawer.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/dynamicBadge.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/dynamicCheckbox.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/footable.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/fullcalendar@5.2.0.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/google-chart.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery-jvectormap-2.0.5.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.countdown.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.filterizr.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.peity.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.star-rating-svg.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/leaflet.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/leaflet.markercluster.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/loader.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/message.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/moment.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/muuri.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/notification.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/popover.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/select2.full.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/slick.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/trumbowyg.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/vendor_assets/js/wickedpicker.min.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/apexmain.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/charts.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/drag-drop.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/footable.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/full-calendar.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/googlemap-init.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/icon-loader.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/jvectormap-init.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/leaflet-init.js"></script>
+    <script src="https://app.pandabot.co.za/assets/theme_assets/js/main.js"></script>
+    <script
+        data-navigate-once="true">window.livewireScriptConfig = { "csrf": "7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB", "uri": "\/livewire\/update", "progressBar": "", "nonce": "" };</script>
+    <!--begin::Javascript-->
+    <script>var hostUrl = "assets/";</script>
+    <!--begin::Global Javascript Bundle(mandatory for all pages)-->
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <!--end::Vendors Javascript-->
+    <!--begin::Custom Javascript(used for this page only)-->
+    <script src="assets/js/custom/apps/projects/project/project.js"></script>
+    <script src="assets/js/widgets.bundle.js"></script>
+    <script src="assets/js/custom/widgets.js"></script>
+    <script src="assets/js/custom/apps/chat/chat.js"></script>
+    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+    <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+    <script src="assets/js/custom/utilities/modals/new-target.js"></script>
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
+
+
+</body>
+
+</html>
