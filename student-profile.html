@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Profile
+  </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="canonical" href="http://preview.keenthemes.compages/user-profile/campaigns.html" />
+  <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+  <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+  <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+  <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/daterangepicker.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/fontawesome.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/footable.standalone.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/fullcalendar@5.2.0.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/jquery-jvectormap-2.0.5.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/leaflet.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/line-awesome.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/MarkerCluster.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/select2.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/slick.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/star-rating-svg.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/trumbowyg.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/vendor_assets/css/wickedpicker.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://app.pandabot.co.za/img/favicon.png">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <!-- Toastr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="https://app.pandabot.co.za/assets/css/main.css">
+
+  <!-- Livewire Styles -->
+  <style>
+    [wire\:loading][wire\:loading],
+    [wire\:loading\.delay][wire\:loading\.delay],
+    [wire\:loading\.inline-block][wire\:loading\.inline-block],
+    [wire\:loading\.inline][wire\:loading\.inline],
+    [wire\:loading\.block][wire\:loading\.block],
+    [wire\:loading\.flex][wire\:loading\.flex],
+    [wire\:loading\.table][wire\:loading\.table],
+    [wire\:loading\.grid][wire\:loading\.grid],
+    [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+      display: none;
+    }
+
+    [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+    [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+    [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+    [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+    [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+    [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+    [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+    [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+      display: none;
+    }
+
+    [wire\:offline][wire\:offline] {
+      display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+      display: none;
+    }
+
+    :root {
+      --livewire-progress-bar-color: #2299dd;
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+
+  <style id="apexcharts-css">
+    @keyframes opaque {
+      0% {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes resizeanim {
+
+      0%,
+      to {
+        opacity: 0
+      }
+    }
+
+    .apexcharts-canvas {
+      position: relative;
+      direction: ltr !important;
+      user-select: none
+    }
+
+    .apexcharts-canvas ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 6px
+    }
+
+    .apexcharts-canvas ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, .5);
+      box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+    }
+
+    .apexcharts-inner {
+      position: relative
+    }
+
+    .apexcharts-text tspan {
+      font-family: inherit
+    }
+
+    rect.legend-mouseover-inactive,
+    .legend-mouseover-inactive rect,
+    .legend-mouseover-inactive path,
+    .legend-mouseover-inactive circle,
+    .legend-mouseover-inactive line,
+    .legend-mouseover-inactive text.apexcharts-yaxis-title-text,
+    .legend-mouseover-inactive text.apexcharts-yaxis-label {
+      transition: .15s ease all;
+      opacity: .2
+    }
+
+    .apexcharts-legend-text {
+      padding-left: 15px;
+      margin-left: -15px;
+    }
+
+    .apexcharts-series-collapsed {
+      opacity: 0
+    }
+
+    .apexcharts-tooltip {
+      border-radius: 5px;
+      box-shadow: 2px 2px 6px -4px #999;
+      cursor: default;
+      font-size: 14px;
+      left: 62px;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 12;
+      transition: .15s ease all
+    }
+
+    .la-angle-down:before {
+      content: "\f107";
+    }
+
+    .apexcharts-tooltip.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-light {
+      border: 1px solid #e3e3e3;
+      background: rgba(255, 255, 255, .96)
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-dark {
+      color: #fff;
+      background: rgba(30, 30, 30, .8)
+    }
+
+    .apexcharts-tooltip * {
+      font-family: inherit
+    }
+
+    .apexcharts-tooltip-title {
+      padding: 6px;
+      font-size: 15px;
+      margin-bottom: 4px
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+      background: #eceff1;
+      border-bottom: 1px solid #ddd
+    }
+
+    .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+      background: rgba(0, 0, 0, .7);
+      border-bottom: 1px solid #333
+    }
+
+    .apexcharts-tooltip-text-goals-value,
+    .apexcharts-tooltip-text-y-value,
+    .apexcharts-tooltip-text-z-value {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 600
+    }
+
+    .apexcharts-tooltip-text-goals-label:empty,
+    .apexcharts-tooltip-text-goals-value:empty,
+    .apexcharts-tooltip-text-y-label:empty,
+    .apexcharts-tooltip-text-y-value:empty,
+    .apexcharts-tooltip-text-z-value:empty,
+    .apexcharts-tooltip-title:empty {
+      display: none
+    }
+
+    .apexcharts-tooltip-text-goals-label,
+    .apexcharts-tooltip-text-goals-value {
+      padding: 6px 0 5px
+    }
+
+    .apexcharts-tooltip-goals-group,
+    .apexcharts-tooltip-text-goals-label,
+    .apexcharts-tooltip-text-goals-value {
+      display: flex
+    }
+
+    .apexcharts-tooltip-text-goals-label:not(:empty),
+    .apexcharts-tooltip-text-goals-value:not(:empty) {
+      margin-top: -6px
+    }
+
+    .apexcharts-tooltip-marker {
+      display: inline-block;
+      position: relative;
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      line-height: 16px;
+      margin-right: 4px;
+      text-align: center;
+      vertical-align: middle;
+      color: inherit;
+    }
+
+    .apexcharts-tooltip-marker::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: currentcolor;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-size: 26px;
+      line-height: 14px;
+      font-weight: 900;
+    }
+
+    .apexcharts-tooltip-marker[shape="circle"]::before {
+      content: "\25CF";
+    }
+
+    .apexcharts-tooltip-marker[shape="square"]::before,
+    .apexcharts-tooltip-marker[shape="rect"]::before {
+      content: "\25A0";
+      transform: translate(-1px, -2px);
+    }
+
+    .apexcharts-tooltip-marker[shape="line"]::before {
+      content: "\2500";
+    }
+
+    .apexcharts-tooltip-marker[shape="diamond"]::before {
+      content: "\25C6";
+      font-size: 28px;
+    }
+
+    .apexcharts-tooltip-marker[shape="triangle"]::before {
+      content: "\25B2";
+      font-size: 22px;
+    }
+
+    .apexcharts-tooltip-marker[shape="cross"]::before {
+      content: "\2715";
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="plus"]::before {
+      content: "\2715";
+      transform: rotate(45deg) translate(-1px, -1px);
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="star"]::before {
+      content: "\2605";
+      font-size: 18px;
+    }
+
+    .apexcharts-tooltip-marker[shape="sparkle"]::before {
+      content: "\2726";
+      font-size: 20px;
+    }
+
+    .apexcharts-tooltip-series-group {
+      padding: 0 10px;
+      display: none;
+      text-align: left;
+      justify-content: left;
+      align-items: center
+    }
+
+    .apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+      opacity: 1
+    }
+
+    .apexcharts-tooltip-series-group.apexcharts-active,
+    .apexcharts-tooltip-series-group:last-child {
+      padding-bottom: 4px
+    }
+
+    .apexcharts-tooltip-y-group {
+      padding: 6px 0 5px
+    }
+
+    .apexcharts-custom-tooltip,
+    .apexcharts-tooltip-box {
+      padding: 4px 8px
+    }
+
+    .apexcharts-tooltip-boxPlot {
+      display: flex;
+      flex-direction: column-reverse
+    }
+
+    .apexcharts-tooltip-box>div {
+      margin: 4px 0
+    }
+
+    .apexcharts-tooltip-box span.value {
+      font-weight: 700
+    }
+
+    .apexcharts-tooltip-rangebar {
+      padding: 5px 8px
+    }
+
+    .apexcharts-tooltip-rangebar .category {
+      font-weight: 600;
+      color: #777
+    }
+
+    .apexcharts-tooltip-rangebar .series-name {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px
+    }
+
+    .apexcharts-xaxistooltip,
+    .apexcharts-yaxistooltip {
+      opacity: 0;
+      pointer-events: none;
+      color: #373d3f;
+      font-size: 13px;
+      text-align: center;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 10;
+      background: #eceff1;
+      border: 1px solid #90a4ae
+    }
+
+    .apexcharts-xaxistooltip {
+      padding: 9px 10px;
+      transition: .15s ease all
+    }
+
+    .apexcharts-xaxistooltip.apexcharts-theme-dark {
+      background: rgba(0, 0, 0, .7);
+      border: 1px solid rgba(0, 0, 0, .5);
+      color: #fff
+    }
+
+    .apexcharts-xaxistooltip:after,
+    .apexcharts-xaxistooltip:before {
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none
+    }
+
+    .apexcharts-xaxistooltip:after {
+      border-color: transparent;
+      border-width: 6px;
+      margin-left: -6px
+    }
+
+    .apexcharts-xaxistooltip:before {
+      border-color: transparent;
+      border-width: 7px;
+      margin-left: -7px
+    }
+
+    .apexcharts-xaxistooltip-bottom:after,
+    .apexcharts-xaxistooltip-bottom:before {
+      bottom: 100%
+    }
+
+    .apexcharts-xaxistooltip-top:after,
+    .apexcharts-xaxistooltip-top:before {
+      top: 100%
+    }
+
+    .apexcharts-xaxistooltip-bottom:after {
+      border-bottom-color: #eceff1
+    }
+
+    .apexcharts-xaxistooltip-bottom:before {
+      border-bottom-color: #90a4ae
+    }
+
+    .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,
+    .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+      border-bottom-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-xaxistooltip-top:after {
+      border-top-color: #eceff1
+    }
+
+    .apexcharts-xaxistooltip-top:before {
+      border-top-color: #90a4ae
+    }
+
+    .apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,
+    .apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+      border-top-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-xaxistooltip.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-yaxistooltip {
+      padding: 4px 10px
+    }
+
+    .apexcharts-yaxistooltip.apexcharts-theme-dark {
+      background: rgba(0, 0, 0, .7);
+      border: 1px solid rgba(0, 0, 0, .5);
+      color: #fff
+    }
+
+    .apexcharts-yaxistooltip:after,
+    .apexcharts-yaxistooltip:before {
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none
+    }
+
+    .apexcharts-yaxistooltip:after {
+      border-color: transparent;
+      border-width: 6px;
+      margin-top: -6px
+    }
+
+    .apexcharts-yaxistooltip:before {
+      border-color: transparent;
+      border-width: 7px;
+      margin-top: -7px
+    }
+
+    .apexcharts-yaxistooltip-left:after,
+    .apexcharts-yaxistooltip-left:before {
+      left: 100%
+    }
+
+    .apexcharts-yaxistooltip-right:after,
+    .apexcharts-yaxistooltip-right:before {
+      right: 100%
+    }
+
+    .apexcharts-yaxistooltip-left:after {
+      border-left-color: #eceff1
+    }
+
+    .apexcharts-yaxistooltip-left:before {
+      border-left-color: #90a4ae
+    }
+
+    .apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,
+    .apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+      border-left-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-yaxistooltip-right:after {
+      border-right-color: #eceff1
+    }
+
+    .apexcharts-yaxistooltip-right:before {
+      border-right-color: #90a4ae
+    }
+
+    .apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,
+    .apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+      border-right-color: rgba(0, 0, 0, .5)
+    }
+
+    .apexcharts-yaxistooltip.apexcharts-active {
+      opacity: 1
+    }
+
+    .apexcharts-yaxistooltip-hidden {
+      display: none
+    }
+
+    .apexcharts-xcrosshairs,
+    .apexcharts-ycrosshairs {
+      pointer-events: none;
+      opacity: 0;
+      transition: .15s ease all
+    }
+
+    .apexcharts-xcrosshairs.apexcharts-active,
+    .apexcharts-ycrosshairs.apexcharts-active {
+      opacity: 1;
+      transition: .15s ease all
+    }
+
+    .apexcharts-ycrosshairs-hidden {
+      opacity: 0
+    }
+
+    .apexcharts-selection-rect {
+      cursor: move
+    }
+
+    .svg_select_shape {
+      stroke-width: 1;
+      stroke-dasharray: 10 10;
+      stroke: black;
+      stroke-opacity: 0.1;
+      pointer-events: none;
+      fill: none;
+    }
+
+    .svg_select_handle {
+      stroke-width: 3;
+      stroke: black;
+      fill: none;
+    }
+
+    .svg_select_handle_r {
+      cursor: e-resize;
+    }
+
+    .svg_select_handle_l {
+      cursor: w-resize;
+    }
+
+    .apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+      cursor: crosshair
+    }
+
+    .apexcharts-svg.apexcharts-zoomable.hovering-pan {
+      cursor: move
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-pan-icon,
+    .apexcharts-reset-icon,
+    .apexcharts-selection-icon,
+    .apexcharts-toolbar-custom-icon,
+    .apexcharts-zoom-icon,
+    .apexcharts-zoomin-icon,
+    .apexcharts-zoomout-icon {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      line-height: 24px;
+      color: #6e8192;
+      text-align: center
+    }
+
+    .apexcharts-menu-icon svg,
+    .apexcharts-reset-icon svg,
+    .apexcharts-zoom-icon svg,
+    .apexcharts-zoomin-icon svg,
+    .apexcharts-zoomout-icon svg {
+      fill: #6e8192
+    }
+
+    .apexcharts-selection-icon svg {
+      fill: #444;
+      transform: scale(.76)
+    }
+
+    .apexcharts-theme-dark .apexcharts-menu-icon svg,
+    .apexcharts-theme-dark .apexcharts-pan-icon svg,
+    .apexcharts-theme-dark .apexcharts-reset-icon svg,
+    .apexcharts-theme-dark .apexcharts-selection-icon svg,
+    .apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoom-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+    .apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+      fill: #f3f4f5
+    }
+
+    .apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,
+    .apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+    .apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+      fill: #008ffb
+    }
+
+    .apexcharts-theme-light .apexcharts-menu-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+    .apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+    .apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+    .apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+      fill: #333
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-selection-icon {
+      position: relative
+    }
+
+    .apexcharts-reset-icon {
+      margin-left: 5px
+    }
+
+    .apexcharts-menu-icon,
+    .apexcharts-reset-icon,
+    .apexcharts-zoom-icon {
+      transform: scale(.85)
+    }
+
+    .apexcharts-zoomin-icon,
+    .apexcharts-zoomout-icon {
+      transform: scale(.7)
+    }
+
+    .apexcharts-zoomout-icon {
+      margin-right: 3px
+    }
+
+    .apexcharts-pan-icon {
+      transform: scale(.62);
+      position: relative;
+      left: 1px;
+      top: 0
+    }
+
+    .apexcharts-pan-icon svg {
+      fill: #fff;
+      stroke: #6e8192;
+      stroke-width: 2
+    }
+
+    .apexcharts-pan-icon.apexcharts-selected svg {
+      stroke: #008ffb
+    }
+
+    .apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+      stroke: #333
+    }
+
+    .apexcharts-toolbar {
+      position: absolute;
+      z-index: 11;
+      max-width: 176px;
+      text-align: right;
+      border-radius: 3px;
+      padding: 0 6px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .apexcharts-menu {
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 3px;
+      right: 10px;
+      opacity: 0;
+      min-width: 110px;
+      transition: .15s ease all;
+      pointer-events: none
+    }
+
+    .apexcharts-menu.apexcharts-menu-open {
+      opacity: 1;
+      pointer-events: all;
+      transition: .15s ease all
+    }
+
+    .apexcharts-menu-item {
+      padding: 6px 7px;
+      font-size: 12px;
+      cursor: pointer
+    }
+
+    .apexcharts-theme-light .apexcharts-menu-item:hover {
+      background: #eee
+    }
+
+    .apexcharts-theme-dark .apexcharts-menu {
+      background: rgba(0, 0, 0, .7);
+      color: #fff
+    }
+
+    @media screen and (min-width:768px) {
+      .apexcharts-canvas:hover .apexcharts-toolbar {
+        opacity: 1
+      }
+    }
+
+    .apexcharts-canvas .apexcharts-element-hidden,
+    .apexcharts-datalabel.apexcharts-element-hidden,
+    .apexcharts-hide .apexcharts-series-points {
+      opacity: 0;
+    }
+
+    .apexcharts-hidden-element-shown {
+      opacity: 1;
+      transition: 0.25s ease all;
+    }
+
+    .apexcharts-datalabel,
+    .apexcharts-datalabel-label,
+    .apexcharts-datalabel-value,
+    .apexcharts-datalabels,
+    .apexcharts-pie-label {
+      cursor: default;
+      pointer-events: none
+    }
+
+    .apexcharts-pie-label-delay {
+      opacity: 0;
+      animation-name: opaque;
+      animation-duration: .3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease
+    }
+
+    .apexcharts-radialbar-label {
+      cursor: pointer;
+    }
+
+    .apexcharts-annotation-rect,
+    .apexcharts-area-series .apexcharts-area,
+    .apexcharts-gridline,
+    .apexcharts-line,
+    .apexcharts-point-annotation-label,
+    .apexcharts-radar-series path:not(.apexcharts-marker),
+    .apexcharts-radar-series polygon,
+    .apexcharts-toolbar svg,
+    .apexcharts-tooltip .apexcharts-marker,
+    .apexcharts-xaxis-annotation-label,
+    .apexcharts-yaxis-annotation-label,
+    .apexcharts-zoom-rect,
+    .no-pointer-events {
+      pointer-events: none
+    }
+
+    .apexcharts-tooltip-active .apexcharts-marker {
+      transition: .15s ease all
+    }
+
+    .apexcharts-radar-series .apexcharts-yaxis {
+      pointer-events: none;
+    }
+
+    .resize-triggers {
+      animation: 1ms resizeanim;
+      visibility: hidden;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden
+    }
+
+    .contract-trigger:before,
+    .resize-triggers,
+    .resize-triggers>div {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    .resize-triggers>div {
+      height: 100%;
+      width: 100%;
+      background: #eee;
+      overflow: auto
+    }
+
+    .contract-trigger:before {
+      overflow: hidden;
+      width: 200%;
+      height: 200%
+    }
+
+    .apexcharts-bar-goals-markers {
+      pointer-events: none
+    }
+
+    .apexcharts-bar-shadows {
+      pointer-events: none
+    }
+
+    .apexcharts-rangebar-goals-markers {
+      pointer-events: none
+    }
+  </style>
+</head>
+
+<body class="layout-light side-menu loaded">
+  <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+
+  <div class="mobile-search">
+    <form action="/" class="search-form">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg replaced-svg">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
+    </form>
+  </div>
+  <div class="mobile-author-actions"></div>
+  <header class="header-top">
+    <nav class="navbar navbar-light">
+      <div class="navbar-left">
+        <div class="logo-area">
+          <a class="navbar-brand align-items-center" href="index.html">
+            <img src="myBizApp.png" alt="">
+          </a>
+          <a href="#" class="sidebar-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg replaced-svg">
+              <path fill="#525768"
+                d="M5,8H19a1,1,0,0,0,0-2H5A1,1,0,0,0,5,8Zm16,3H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm-2,5H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z">
+              </path>
+            </svg></a>
+        </div>
+        <div class="top-menu">
+          <div class="hexadash-top-menu position-relative">
+            <ul class="d-flex align-items-center flex-wrap">
+              <li>
+                <a href="index.html" class="active">Dashboard</a>
+              </li>
+
+              <li class="has-subMenu">
+                <a href="#" class="">Applications</a>
+                <ul class="megaMenu-wrapper megaMenu-dropdown">
+                  <li>
+                    <ul>
+                      <li class="has-subMenu-left">
+                        <a href="#" class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="svg nav-icon replaced-svg">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                          </svg>
+                          <span class="menu-text text-initial">Companies</span>
+                        </a>
+                        <ul class="subMenu">
+                          <li>
+                            <a href="#" class="">Create</a>
+                          </li>
+                          <li>
+                            <a href="#" class="">List</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="has-subMenu-left">
+                        <a href="#" class="">
+                          <span class="nav-icon uil uil-calendar-alt"></span>
+                          <span class="menu-text">Events</span>
+                        </a>
+                        <ul class="subMenu">
+                          <li>
+                            <a href="#" class="">Create</a>
+                          </li>
+                          <li>
+                            <a href="#" class="">List</a>
+                          </li>
+                          <li>
+                            <a href="#" class="">Reservations</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="has-subMenu-left">
+                        <a href="#" class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="svg nav-icon replaced-svg">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                          </svg>
+                          <span class="menu-text text-initial">Opportunities</span>
+                        </a>
+                        <ul class="subMenu">
+                          <li>
+                            <a href="#" class="">Create</a>
+                          </li>
+                          <li>
+                            <a href="#" class="">List</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-right">
+
+        <!-- ends: .navbar-right__menu -->
+        <div class="navbar-right__mobileAction d-md-none">
+          <a href="#" class="btn-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="svg feather-search replaced-svg">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="svg feather-x replaced-svg">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg></a>
+          <a href="#" class="btn-author-action">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="svg replaced-svg">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="12" cy="5" r="1"></circle>
+              <circle cx="12" cy="19" r="1"></circle>
+            </svg></a>
+        </div>
+        <ul class="navbar-right__menu">
+          <li class="nav-search">
+            <a href="#" class="search-toggle">
+              <i class="uil uil-search"></i>
+              <i class="uil uil-times"></i>
+            </a>
+            <form action="/" class="search-form-topMenu">
+              <span class="search-icon uil uil-search"></span>
+              <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..."
+                aria-label="Search">
+            </form>
+          </li>
+          <li class="nav-author">
+            <div class="dropdown-custom">
+              <a href="javascript:;" class="nav-item-toggle">
+                <span class="avatar avatar-warning avatar-sm avatar-circle  ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="svg avatar-icon replaced-svg">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </span>
+                <span class="nav-item__title">Michaela<i class="las la-angle-down nav-item__arrow"></i></span>
+              </a>
+              <div class="dropdown-parent-wrapper">
+                <div class="dropdown-wrapper">
+                  <div class="nav-author__info">
+                    <div class="author-img">
+                      <span class="avatar avatar-warning avatar-lg avatar-circle  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="svg avatar-icon replaced-svg">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                      </span>
+                    </div>
+                    <div>
+                      <h6>Michaela Mc</h6>
+                      <span>michaela@skillspanda.co.za</span>
+                    </div>
+                  </div>
+                  <div class="nav-author__options">
+                    <ul>
+
+                      <li>
+                        <a href="profile.html">
+                          <i class="uil uil-bell"></i>Profile</a>
+                      </li>
+                    </ul>
+                    <a href="https://app.pandabot.co.za/logout" class="nav-author__signout"
+                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <i class="uil uil-sign-out-alt"></i> Sign Out
+                    </a>
+
+                    <form id="logout-form" action="https://app.pandabot.co.za/logout" method="POST"
+                      style="display: none;">
+                      <input type="hidden" name="_token" value="7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB"
+                        autocomplete="off">
+                    </form>
+
+                  </div>
+                </div>
+                <!-- ends: .dropdown-wrapper -->
+              </div>
+            </div>
+          </li>
+          <!-- ends: .nav-author -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="main-content">
+    <div class="sidebar-wrapper">
+      <div class="sidebar sidebar-collapse" id="sidebar">
+        <div class="sidebar__menu-group">
+          <ul class="sidebar_nav">
+            <li>
+              <a href="index.html" class="active">
+                <span class="nav-icon uil uil-create-dashboard"></span>
+                <span class="menu-text">Dashboard</span>
+
+              </a>
+            </li>
+
+            <li class="menu-title mt-30">
+              <span>Apps</span>
+            </li>
+
+            <li class="has-child">
+              <a href="#" class="">
+                <span class="nav-icon uil uil-bag"></span>
+                <span class="menu-text">Clients</span>
+                <span class="toggle-icon"></span>
+              </a>
+              <ul style="display: none; top: 235.719px;">
+                <li class="">
+                  <a href="https://app.pandabot.co.za/events">Documents</a>
+                </li>
+              </ul>
+            </li>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="contents">
+      <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <!--begin::Content wrapper-->
+        <div class="d-flex flex-column flex-column-fluid">
+          <!--begin::Toolbar-->
+          <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+            <!--begin::Toolbar container-->
+            <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+              <!--begin::Page title-->
+              <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
+                  Profile</h1>
+                <!--end::Title-->
+                <!--begin::Breadcrumb-->
+                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                  <!--begin::Item-->
+                  <li class="breadcrumb-item text-muted">
+                    <a href="index.html" class="text-muted text-hover-primary">Home</a>
+                  </li>
+                  <!--end::Item-->
+                  <!--begin::Item-->
+                  <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                  </li>
+                  <!--end::Item-->
+                  <!--begin::Item-->
+                  <li class="breadcrumb-item text-muted">User Profile</li>
+                  <!--end::Item-->
+                </ul>
+                <!--end::Breadcrumb-->
+              </div>
+              <!--end::Page title-->
+            </div>
+            <!--end::Toolbar container-->
+          </div>
+          <!--end::Toolbar-->
+          <!--begin::Content-->
+          <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container container-xxl">
+              <!--begin::Navbar-->
+              <div class="card mb-5 mb-xxl-8">
+                <div class="card-body pt-9 pb-0">
+                  <!--begin::Details-->
+                  <div class="d-flex flex-wrap flex-sm-nowrap">
+                    <!--begin: Pic-->
+                    <div class="me-7 mb-4">
+                      <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                        <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                      </div>
+                    </div>
+                    <!--end::Pic-->
+                    <!--begin::Info-->
+                    <div class="flex-grow-1">
+                      <!--begin::Title-->
+                      <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                        <!--begin::User-->
+                        <div class="d-flex flex-column">
+                          <!--begin::Name-->
+                          <div class="d-flex align-items-center mb-2">
+                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Max Smith</a>
+                          </div>
+                          <!--end::Name-->
+                          <!--begin::Info-->
+                          <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                            <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
+                              <i class="ki-duotone ki-profile-circle fs-4 me-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                              </i>Developer</a>
+                            <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
+                              <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>Johannesburg</a>
+                            <a href="#" class="d-flex align-items-center text-gray-500 text-hover-primary mb-2">
+                              <i class="ki-duotone ki-sms fs-4 me-1">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                              </i>max@kt.com</a>
+                          </div>
+                          <!--end::Info-->
+                        </div>
+                        <!--end::User-->
+                      </div>
+                      <!--end::Title-->
+                      <!--begin::Stats-->
+                      <div class="d-flex flex-wrap flex-stack">
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-column flex-grow-1 pe-8">
+                          <!--begin::Stats-->
+                          <div class="d-flex flex-wrap">
+                            <!--begin::Stat-->
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                              <!--begin::Number-->
+                              <div class="d-flex align-items-center">
+                                <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                  <span class="path1"></span>
+                                  <span class="path2"></span>
+                                </i>
+                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="4500"
+                                  data-kt-countup-prefix="$">0</div>
+                              </div>
+                              <!--end::Number-->
+                              <!--begin::Label-->
+                              <div class="fw-semibold fs-6 text-gray-500">Earnings</div>
+                              <!--end::Label-->
+                            </div>
+                            <!--end::Stat-->
+                            <!--begin::Stat-->
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                              <!--begin::Number-->
+                              <div class="d-flex align-items-center">
+                                <i class="ki-duotone ki-arrow-down fs-3 text-danger me-2">
+                                  <span class="path1"></span>
+                                  <span class="path2"></span>
+                                </i>
+                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="80">0</div>
+                              </div>
+                              <!--end::Number-->
+                              <!--begin::Label-->
+                              <div class="fw-semibold fs-6 text-gray-500">Programs</div>
+                              <!--end::Label-->
+                            </div>
+                            <!--end::Stat-->
+                            <!--begin::Stat-->
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                              <!--begin::Number-->
+                              <div class="d-flex align-items-center">
+                                <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                  <span class="path1"></span>
+                                  <span class="path2"></span>
+                                </i>
+                                <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="60"
+                                  data-kt-countup-prefix="%">0</div>
+                              </div>
+                              <!--end::Number-->
+                              <!--begin::Label-->
+                              <div class="fw-semibold fs-6 text-gray-500">Success Rate</div>
+                              <!--end::Label-->
+                            </div>
+                            <!--end::Stat-->
+                          </div>
+                          <!--end::Stats-->
+                        </div>
+                        <!--end::Wrapper-->
+                        <!--begin::Progress-->
+                        <div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
+                          <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                            <span class="fw-semibold fs-6 text-gray-500">Profile Compleation</span>
+                            <span class="fw-bold fs-6">50%</span>
+                          </div>
+                          <div class="h-5px mx-3 w-100 bg-light mb-3">
+                            <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;"
+                              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                        <!--end::Progress-->
+                      </div>
+                      <!--end::Stats-->
+                    </div>
+                    <!--end::Info-->
+                  </div>
+                  <!--end::Details-->
+                  <!--begin::Navs-->
+                  <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+                    <!--begin::Nav item-->
+                    <li class="nav-item mt-2">
+                      <a class="nav-link text-active-primary ms-0 me-10 py-5 active"
+                        href="#kt_chart_widgets_22_tab_content_1">Overview</a>
+                    </li>
+                    <!--end::Nav item-->
+                    <!--begin::Nav item-->
+                    <li class="nav-item mt-2">
+                      <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                        href="#">Programs</a>
+                    </li>
+                    <li class="nav-item mt-2">
+                      <a class="nav-link text-active-primary ms-0 me-10 py-5 "
+                        href="user-documents.html">
+                        Documents </a>
+                    </li>
+
+                  </ul>
+                  <!--begin::Navs-->
+                </div>
+              </div>
+              <!--end::Navbar-->
+              <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+                <!--begin::Col-->
+                <div class="col-xxl-8">
+
+                  <!--begin::Chart widget 22-->
+                  <div class="card h-xl-100">
+
+                    <!--begin::Body-->
+                    <div class="card-body pb-3">
+                      <!--begin::Tab Content-->
+                      <div class="tab-content">
+                        <!--begin::Tap pane-->
+                        <div class="tab-pane fade show active" id="kt_chart_widgets_22_tab_content_1" role="tabpanel"
+                          aria-labelledby="kt_chart_widgets_22_tab_1">
+                          <!--begin::Wrapper-->
+                          <div class="d-flex flex-wrap flex-md-nowrap">
+                            <!--begin::Items-->
+                            <div class="me-md-5 w-100">
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-timer fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span><span
+                                          class="path3"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Attendance</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">Great, you always attending class.
+                                      keep it up</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">73</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">76</span>
+
+                                  <span class="badge badge-lg badge-light-success align-self-center px-2">95%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-element-11 fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span><span
+                                          class="path3"></span><span class="path4"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Homeworks</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">Don’t forget to turn in your
+                                      task</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">207</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">214</span>
+
+                                  <span class="badge badge-lg badge-light-success align-self-center px-2">92%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-abstract-24 fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Tests</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">You take 12 subjects at this
+                                      semester</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">27</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">38</span>
+
+                                  <span class="badge badge-lg badge-light-warning align-self-center px-2">80%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+                            </div>
+                            <!--end::Items-->
+
+                            <!--begin::Container-->
+                            <div
+                              class="d-flex justify-content-between flex-column w-225px w-md-600px mx-auto mx-md-0 pt-3 pb-10">
+                              <!--begin::Title-->
+                              <div class="fs-4 fw-bold text-gray-900 text-center mb-5">
+                                Session Attendance <br>
+                                for Course
+                              </div>
+                              <!--end::Title-->
+
+                              <!--begin::Chart-->
+                              <div id="kt_chart_widgets_22_chart_1" class="mx-auto mb-4" style="min-height: 216px;">
+                                <div id="apexchartsbzbr08au"
+                                  class="apexcharts-canvas apexchartsbzbr08au apexcharts-theme-"
+                                  style="width: 250px; height: 216px;"><svg id="SvgjsSvg1109" width="250" height="216"
+                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
+                                    class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)">
+                                    <foreignObject x="0" y="0" width="250" height="216">
+                                      <div class="apexcharts-legend" xmlns="http://www.w3.org/1999/xhtml"></div>
+                                      <style type="text/css">
+                                        .apexcharts-flip-y {
+                                          transform: scaleY(-1) translateY(-100%);
+                                          transform-origin: top;
+                                          transform-box: fill-box;
+                                        }
+
+                                        .apexcharts-flip-x {
+                                          transform: scaleX(-1);
+                                          transform-origin: center;
+                                          transform-box: fill-box;
+                                        }
+
+                                        .apexcharts-legend {
+                                          display: flex;
+                                          overflow: auto;
+                                          padding: 0 10px;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom,
+                                        .apexcharts-legend.apx-legend-position-top {
+                                          flex-wrap: wrap
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-right,
+                                        .apexcharts-legend.apx-legend-position-left {
+                                          flex-direction: column;
+                                          bottom: 0;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left,
+                                        .apexcharts-legend.apx-legend-position-top.apexcharts-align-left,
+                                        .apexcharts-legend.apx-legend-position-right,
+                                        .apexcharts-legend.apx-legend-position-left {
+                                          justify-content: flex-start;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+                                        .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                          justify-content: center;
+                                        }
+
+                                        .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right,
+                                        .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                          justify-content: flex-end;
+                                        }
+
+                                        .apexcharts-legend-series {
+                                          cursor: pointer;
+                                          line-height: normal;
+                                          display: flex;
+                                          align-items: center;
+                                        }
+
+                                        .apexcharts-legend-text {
+                                          position: relative;
+                                          font-size: 14px;
+                                        }
+
+                                        .apexcharts-legend-text *,
+                                        .apexcharts-legend-marker * {
+                                          pointer-events: none;
+                                        }
+
+                                        .apexcharts-legend-marker {
+                                          position: relative;
+                                          display: flex;
+                                          align-items: center;
+                                          justify-content: center;
+                                          cursor: pointer;
+                                          margin-right: 1px;
+                                        }
+
+                                        .apexcharts-legend-series.apexcharts-no-click {
+                                          cursor: auto;
+                                        }
+
+                                        .apexcharts-legend .apexcharts-hidden-zero-series,
+                                        .apexcharts-legend .apexcharts-hidden-null-series {
+                                          display: none !important;
+                                        }
+
+                                        .apexcharts-inactive-legend {
+                                          opacity: 0.45;
+                                        }
+                                      </style>
+                                    </foreignObject>
+                                    <g id="SvgjsG1111" class="apexcharts-inner apexcharts-graphical"
+                                      transform="translate(20.83333333333333, 0)">
+                                      <defs id="SvgjsDefs1110">
+                                        <clipPath id="gridRectMaskbzbr08au">
+                                          <rect id="SvgjsRect1112" width="208.33333333333334"
+                                            height="208.33333333333334" x="0" y="0" rx="0" ry="0" opacity="1"
+                                            stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect>
+                                        </clipPath>
+                                        <clipPath id="gridRectBarMaskbzbr08au">
+                                          <rect id="SvgjsRect1113" width="212.33333333333334"
+                                            height="212.33333333333334" x="-2" y="-2" rx="0" ry="0" opacity="1"
+                                            stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect>
+                                        </clipPath>
+                                        <clipPath id="gridRectMarkerMaskbzbr08au">
+                                          <rect id="SvgjsRect1114" width="208.33333333333334"
+                                            height="208.33333333333334" x="0" y="0" rx="0" ry="0" opacity="1"
+                                            stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect>
+                                        </clipPath>
+                                        <clipPath id="forecastMaskbzbr08au"></clipPath>
+                                        <clipPath id="nonForecastMaskbzbr08au"></clipPath>
+                                        <filter id="SvgjsFilter1125" filterUnits="userSpaceOnUse" width="200%"
+                                          height="200%" x="-50%" y="-50%">
+                                          <feFlood id="SvgjsFeFlood1126" flood-color="#000000" flood-opacity="0.45"
+                                            result="SvgjsFeFlood1126Out" in="SourceGraphic"></feFlood>
+                                          <feComposite id="SvgjsFeComposite1127" in="SvgjsFeFlood1126Out"
+                                            in2="SourceAlpha" operator="in" result="SvgjsFeComposite1127Out">
+                                          </feComposite>
+                                          <feOffset id="SvgjsFeOffset1128" dx="1" dy="1" result="SvgjsFeOffset1128Out"
+                                            in="SvgjsFeComposite1127Out"></feOffset>
+                                          <feGaussianBlur id="SvgjsFeGaussianBlur1129" stdDeviation="1 "
+                                            result="SvgjsFeGaussianBlur1129Out" in="SvgjsFeOffset1128Out">
+                                          </feGaussianBlur>
+                                          <feMerge id="SvgjsFeMerge1130" result="SvgjsFeMerge1130Out"
+                                            in="SourceGraphic">
+                                            <feMergeNode id="SvgjsFeMergeNode1131" in="SvgjsFeGaussianBlur1129Out">
+                                            </feMergeNode>
+                                            <feMergeNode id="SvgjsFeMergeNode1132" in="[object Arguments]">
+                                            </feMergeNode>
+                                          </feMerge>
+                                          <feBlend id="SvgjsFeBlend1133" in="SourceGraphic" in2="SvgjsFeMerge1130Out"
+                                            mode="normal" result="SvgjsFeBlend1133Out"></feBlend>
+                                        </filter>
+                                        <filter id="SvgjsFilter1138" filterUnits="userSpaceOnUse" width="200%"
+                                          height="200%" x="-50%" y="-50%">
+                                          <feFlood id="SvgjsFeFlood1139" flood-color="#000000" flood-opacity="0.45"
+                                            result="SvgjsFeFlood1139Out" in="SourceGraphic"></feFlood>
+                                          <feComposite id="SvgjsFeComposite1140" in="SvgjsFeFlood1139Out"
+                                            in2="SourceAlpha" operator="in" result="SvgjsFeComposite1140Out">
+                                          </feComposite>
+                                          <feOffset id="SvgjsFeOffset1141" dx="1" dy="1" result="SvgjsFeOffset1141Out"
+                                            in="SvgjsFeComposite1140Out"></feOffset>
+                                          <feGaussianBlur id="SvgjsFeGaussianBlur1142" stdDeviation="1 "
+                                            result="SvgjsFeGaussianBlur1142Out" in="SvgjsFeOffset1141Out">
+                                          </feGaussianBlur>
+                                          <feMerge id="SvgjsFeMerge1143" result="SvgjsFeMerge1143Out"
+                                            in="SourceGraphic">
+                                            <feMergeNode id="SvgjsFeMergeNode1144" in="SvgjsFeGaussianBlur1142Out">
+                                            </feMergeNode>
+                                            <feMergeNode id="SvgjsFeMergeNode1145" in="[object Arguments]">
+                                            </feMergeNode>
+                                          </feMerge>
+                                          <feBlend id="SvgjsFeBlend1146" in="SourceGraphic" in2="SvgjsFeMerge1143Out"
+                                            mode="normal" result="SvgjsFeBlend1146Out"></feBlend>
+                                        </filter>
+                                        <filter id="SvgjsFilter1151" filterUnits="userSpaceOnUse" width="200%"
+                                          height="200%" x="-50%" y="-50%">
+                                          <feFlood id="SvgjsFeFlood1152" flood-color="#000000" flood-opacity="0.45"
+                                            result="SvgjsFeFlood1152Out" in="SourceGraphic"></feFlood>
+                                          <feComposite id="SvgjsFeComposite1153" in="SvgjsFeFlood1152Out"
+                                            in2="SourceAlpha" operator="in" result="SvgjsFeComposite1153Out">
+                                          </feComposite>
+                                          <feOffset id="SvgjsFeOffset1154" dx="1" dy="1" result="SvgjsFeOffset1154Out"
+                                            in="SvgjsFeComposite1153Out"></feOffset>
+                                          <feGaussianBlur id="SvgjsFeGaussianBlur1155" stdDeviation="1 "
+                                            result="SvgjsFeGaussianBlur1155Out" in="SvgjsFeOffset1154Out">
+                                          </feGaussianBlur>
+                                          <feMerge id="SvgjsFeMerge1156" result="SvgjsFeMerge1156Out"
+                                            in="SourceGraphic">
+                                            <feMergeNode id="SvgjsFeMergeNode1157" in="SvgjsFeGaussianBlur1155Out">
+                                            </feMergeNode>
+                                            <feMergeNode id="SvgjsFeMergeNode1158" in="[object Arguments]">
+                                            </feMergeNode>
+                                          </feMerge>
+                                          <feBlend id="SvgjsFeBlend1159" in="SourceGraphic" in2="SvgjsFeMerge1156Out"
+                                            mode="normal" result="SvgjsFeBlend1159Out"></feBlend>
+                                        </filter>
+                                        <filter id="SvgjsFilter1164" filterUnits="userSpaceOnUse" width="200%"
+                                          height="200%" x="-50%" y="-50%">
+                                          <feFlood id="SvgjsFeFlood1165" flood-color="#000000" flood-opacity="0.45"
+                                            result="SvgjsFeFlood1165Out" in="SourceGraphic"></feFlood>
+                                          <feComposite id="SvgjsFeComposite1166" in="SvgjsFeFlood1165Out"
+                                            in2="SourceAlpha" operator="in" result="SvgjsFeComposite1166Out">
+                                          </feComposite>
+                                          <feOffset id="SvgjsFeOffset1167" dx="1" dy="1" result="SvgjsFeOffset1167Out"
+                                            in="SvgjsFeComposite1166Out"></feOffset>
+                                          <feGaussianBlur id="SvgjsFeGaussianBlur1168" stdDeviation="1 "
+                                            result="SvgjsFeGaussianBlur1168Out" in="SvgjsFeOffset1167Out">
+                                          </feGaussianBlur>
+                                          <feMerge id="SvgjsFeMerge1169" result="SvgjsFeMerge1169Out"
+                                            in="SourceGraphic">
+                                            <feMergeNode id="SvgjsFeMergeNode1170" in="SvgjsFeGaussianBlur1168Out">
+                                            </feMergeNode>
+                                            <feMergeNode id="SvgjsFeMergeNode1171" in="[object Arguments]">
+                                            </feMergeNode>
+                                          </feMerge>
+                                          <feBlend id="SvgjsFeBlend1172" in="SourceGraphic" in2="SvgjsFeMerge1169Out"
+                                            mode="normal" result="SvgjsFeBlend1172Out"></feBlend>
+                                        </filter>
+                                      </defs>
+                                      <g id="SvgjsG1117" class="apexcharts-pie">
+                                        <g id="SvgjsG1118" transform="translate(0, 0) scale(1)">
+                                          <circle id="SvgjsCircle1119" r="48.81300813008131" cx="104.16666666666667"
+                                            cy="104.16666666666667" fill="transparent"></circle>
+                                          <g id="SvgjsG1120" class="apexcharts-slices">
+                                            <g id="SvgjsG1121" class="apexcharts-series apexcharts-pie-series"
+                                              seriesName="Sales" rel="1" data:realIndex="0">
+                                              <path id="SvgjsPath1122"
+                                                d="M 104.16666666666667 6.5406504065040565 A 97.62601626016261 97.62601626016261 0 0 1 173.1986847844558 35.134648548877536 L 138.68267572556124 69.6506576077721 A 48.81300813008131 48.81300813008131 0 0 0 104.16666666666667 55.353658536585364 L 104.16666666666667 6.5406504065040565 z "
+                                                fill="rgba(136,63,255,1)" fill-opacity="1" stroke-opacity="1"
+                                                stroke-linecap="butt" stroke-width="0" stroke-dasharray="0"
+                                                class="apexcharts-pie-area apexcharts-donut-slice-0" index="0" j="0"
+                                                data:angle="45" data:startAngle="0" data:strokeWidth="0" data:value="20"
+                                                data:pathOrig="M 104.16666666666667 6.5406504065040565 A 97.62601626016261 97.62601626016261 0 0 1 173.1986847844558 35.134648548877536 L 138.68267572556124 69.6506576077721 A 48.81300813008131 48.81300813008131 0 0 0 104.16666666666667 55.353658536585364 L 104.16666666666667 6.5406504065040565 z ">
+                                              </path>
+                                            </g>
+                                            <g id="SvgjsG1134" class="apexcharts-series apexcharts-pie-series"
+                                              seriesName="Sales" rel="2" data:realIndex="1">
+                                              <path id="SvgjsPath1135"
+                                                d="M 173.1986847844558 35.134648548877536 A 97.62601626016261 97.62601626016261 0 1 1 6.5406504065040565 104.16666666666669 L 55.353658536585364 104.16666666666667 A 48.81300813008131 48.81300813008131 0 1 0 138.68267572556124 69.6506576077721 L 173.1986847844558 35.134648548877536 z "
+                                                fill="rgba(0,162,97,1)" fill-opacity="1" stroke-opacity="1"
+                                                stroke-linecap="butt" stroke-width="0" stroke-dasharray="0"
+                                                class="apexcharts-pie-area apexcharts-donut-slice-1" index="0" j="1"
+                                                data:angle="225" data:startAngle="45" data:strokeWidth="0"
+                                                data:value="100"
+                                                data:pathOrig="M 173.1986847844558 35.134648548877536 A 97.62601626016261 97.62601626016261 0 1 1 6.5406504065040565 104.16666666666669 L 55.353658536585364 104.16666666666667 A 48.81300813008131 48.81300813008131 0 1 0 138.68267572556124 69.6506576077721 L 173.1986847844558 35.134648548877536 z ">
+                                              </path>
+                                            </g>
+                                            <g id="SvgjsG1147" class="apexcharts-series apexcharts-pie-series"
+                                              seriesName="Sales" rel="3" data:realIndex="2">
+                                              <path id="SvgjsPath1148"
+                                                d="M 6.5406504065040565 104.16666666666669 A 97.62601626016261 97.62601626016261 0 0 1 22.99360077618728 49.92855806423265 L 63.580133721426975 77.04761236544965 A 48.81300813008131 48.81300813008131 0 0 0 55.353658536585364 104.16666666666667 L 6.5406504065040565 104.16666666666669 z "
+                                                fill="rgba(0,106,230,1)" fill-opacity="1" stroke-opacity="1"
+                                                stroke-linecap="butt" stroke-width="0" stroke-dasharray="0"
+                                                class="apexcharts-pie-area apexcharts-donut-slice-2" index="0" j="2"
+                                                data:angle="33.75" data:startAngle="270" data:strokeWidth="0"
+                                                data:value="15"
+                                                data:pathOrig="M 6.5406504065040565 104.16666666666669 A 97.62601626016261 97.62601626016261 0 0 1 22.99360077618728 49.92855806423265 L 63.580133721426975 77.04761236544965 A 48.81300813008131 48.81300813008131 0 0 0 55.353658536585364 104.16666666666667 L 6.5406504065040565 104.16666666666669 z ">
+                                              </path>
+                                            </g>
+                                            <g id="SvgjsG1160" class="apexcharts-series apexcharts-pie-series"
+                                              seriesName="Sales" rel="4" data:realIndex="3">
+                                              <path id="SvgjsPath1161"
+                                                d="M 22.99360077618728 49.92855806423265 A 97.62601626016261 97.62601626016261 0 0 1 104.1496277125597 6.540651893433306 L 104.15814718961319 55.35365928004999 A 48.81300813008131 48.81300813008131 0 0 0 63.580133721426975 77.04761236544965 L 22.99360077618728 49.92855806423265 z "
+                                                fill="rgba(228,40,85,1)" fill-opacity="1" stroke-opacity="1"
+                                                stroke-linecap="butt" stroke-width="0" stroke-dasharray="0"
+                                                class="apexcharts-pie-area apexcharts-donut-slice-3" index="0" j="3"
+                                                data:angle="56.25" data:startAngle="303.75" data:strokeWidth="0"
+                                                data:value="25"
+                                                data:pathOrig="M 22.99360077618728 49.92855806423265 A 97.62601626016261 97.62601626016261 0 0 1 104.1496277125597 6.540651893433306 L 104.15814718961319 55.35365928004999 A 48.81300813008131 48.81300813008131 0 0 0 63.580133721426975 77.04761236544965 L 22.99360077618728 49.92855806423265 z ">
+                                              </path>
+                                            </g>
+                                            <g id="SvgjsG1123" class="apexcharts-datalabels"><text id="SvgjsText1124"
+                                                font-family="inherit" x="132.1865609095935" y="36.52065796913293"
+                                                text-anchor="middle" dominant-baseline="auto" font-size="12px"
+                                                font-weight="600" fill="#ffffff"
+                                                class="apexcharts-text apexcharts-pie-label"
+                                                filter="url(#SvgjsFilter1125)"
+                                                style="font-family: inherit;">12.5%</text></g>
+                                            <g id="SvgjsG1136" class="apexcharts-datalabels"><text id="SvgjsText1137"
+                                                font-family="inherit" x="132.1865609095935" y="171.8126753642004"
+                                                text-anchor="middle" dominant-baseline="auto" font-size="12px"
+                                                font-weight="600" fill="#ffffff"
+                                                class="apexcharts-text apexcharts-pie-label"
+                                                filter="url(#SvgjsFilter1138)"
+                                                style="font-family: inherit;">62.5%</text></g>
+                                            <g id="SvgjsG1149" class="apexcharts-datalabels"><text id="SvgjsText1150"
+                                                font-family="inherit" x="34.0999620845181" y="82.91216420037654"
+                                                text-anchor="middle" dominant-baseline="auto" font-size="12px"
+                                                font-weight="600" fill="#ffffff"
+                                                class="apexcharts-text apexcharts-pie-label"
+                                                filter="url(#SvgjsFilter1151)" style="font-family: inherit;">9.4%</text>
+                                            </g>
+                                            <g id="SvgjsG1162" class="apexcharts-datalabels"><text id="SvgjsText1163"
+                                                font-family="inherit" x="69.65122754589481" y="39.59282189657492"
+                                                text-anchor="middle" dominant-baseline="auto" font-size="12px"
+                                                font-weight="600" fill="#ffffff"
+                                                class="apexcharts-text apexcharts-pie-label"
+                                                filter="url(#SvgjsFilter1164)"
+                                                style="font-family: inherit;">15.6%</text></g>
+                                          </g>
+                                        </g>
+                                      </g>
+                                      <line id="SvgjsLine1173" x1="0" y1="0" x2="208.33333333333334" y2="0"
+                                        stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt"
+                                        class="apexcharts-ycrosshairs"></line>
+                                      <line id="SvgjsLine1174" x1="0" y1="0" x2="208.33333333333334" y2="0"
+                                        stroke-dasharray="0" stroke-width="0" stroke-linecap="butt"
+                                        class="apexcharts-ycrosshairs-hidden"></line>
+                                    </g>
+                                    <g id="SvgjsG1115" class="apexcharts-datalabels-group"
+                                      transform="translate(0, 0) scale(1)"></g>
+                                    <g id="SvgjsG1116" class="apexcharts-datalabels-group"
+                                      transform="translate(0, 0) scale(1)"></g>
+                                  </svg>
+                                  <div class="apexcharts-tooltip apexcharts-theme-dark">
+                                    <div class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-0"
+                                      style="order: 1;"><span class="apexcharts-tooltip-marker"
+                                        style="background-color: rgb(136, 63, 255);"></span>
+                                      <div class="apexcharts-tooltip-text"
+                                        style="font-family: inherit; font-size: 12px;">
+                                        <div class="apexcharts-tooltip-y-group"><span
+                                            class="apexcharts-tooltip-text-y-label"></span><span
+                                            class="apexcharts-tooltip-text-y-value"></span></div>
+                                        <div class="apexcharts-tooltip-goals-group"><span
+                                            class="apexcharts-tooltip-text-goals-label"></span><span
+                                            class="apexcharts-tooltip-text-goals-value"></span></div>
+                                        <div class="apexcharts-tooltip-z-group"><span
+                                            class="apexcharts-tooltip-text-z-label"></span><span
+                                            class="apexcharts-tooltip-text-z-value"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-1"
+                                      style="order: 2;"><span class="apexcharts-tooltip-marker"
+                                        style="background-color: rgb(0, 162, 97);"></span>
+                                      <div class="apexcharts-tooltip-text"
+                                        style="font-family: inherit; font-size: 12px;">
+                                        <div class="apexcharts-tooltip-y-group"><span
+                                            class="apexcharts-tooltip-text-y-label"></span><span
+                                            class="apexcharts-tooltip-text-y-value"></span></div>
+                                        <div class="apexcharts-tooltip-goals-group"><span
+                                            class="apexcharts-tooltip-text-goals-label"></span><span
+                                            class="apexcharts-tooltip-text-goals-value"></span></div>
+                                        <div class="apexcharts-tooltip-z-group"><span
+                                            class="apexcharts-tooltip-text-z-label"></span><span
+                                            class="apexcharts-tooltip-text-z-value"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-2"
+                                      style="order: 3;"><span class="apexcharts-tooltip-marker"
+                                        style="background-color: rgb(0, 106, 230);"></span>
+                                      <div class="apexcharts-tooltip-text"
+                                        style="font-family: inherit; font-size: 12px;">
+                                        <div class="apexcharts-tooltip-y-group"><span
+                                            class="apexcharts-tooltip-text-y-label"></span><span
+                                            class="apexcharts-tooltip-text-y-value"></span></div>
+                                        <div class="apexcharts-tooltip-goals-group"><span
+                                            class="apexcharts-tooltip-text-goals-label"></span><span
+                                            class="apexcharts-tooltip-text-goals-value"></span></div>
+                                        <div class="apexcharts-tooltip-z-group"><span
+                                            class="apexcharts-tooltip-text-z-label"></span><span
+                                            class="apexcharts-tooltip-text-z-value"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-3"
+                                      style="order: 4;"><span class="apexcharts-tooltip-marker"
+                                        style="background-color: rgb(228, 40, 85);"></span>
+                                      <div class="apexcharts-tooltip-text"
+                                        style="font-family: inherit; font-size: 12px;">
+                                        <div class="apexcharts-tooltip-y-group"><span
+                                            class="apexcharts-tooltip-text-y-label"></span><span
+                                            class="apexcharts-tooltip-text-y-value"></span></div>
+                                        <div class="apexcharts-tooltip-goals-group"><span
+                                            class="apexcharts-tooltip-text-goals-label"></span><span
+                                            class="apexcharts-tooltip-text-goals-value"></span></div>
+                                        <div class="apexcharts-tooltip-z-group"><span
+                                            class="apexcharts-tooltip-text-z-label"></span><span
+                                            class="apexcharts-tooltip-text-z-value"></span></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--end::Chart-->
+
+                              <!--begin::Labels-->
+                              <div class="mx-auto">
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Precent(133)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-primary me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Illness(9)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Late(2)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-danger me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Absent(3)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+                              </div>
+                              <!--end::Labels-->
+                            </div>
+                            <!--end::Container-->
+                          </div>
+                          <!--end::Wrapper-->
+                        </div>
+                        <!--end::Tap pane-->
+                        <!--begin::Tap pane-->
+                        <div class="tab-pane fade " id="kt_chart_widgets_22_tab_content_2" role="tabpanel"
+                          aria-labelledby="kt_chart_widgets_22_tab_2">
+                          <!--begin::Wrapper-->
+                          <div class="d-flex flex-wrap flex-md-nowrap">
+                            <!--begin::Items-->
+                            <div class="me-md-5 w-100">
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-element-11 fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span><span
+                                          class="path3"></span><span class="path4"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Homeworks</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">Don’t forget to turn in your
+                                      task</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">423</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">154</span>
+
+                                  <span class="badge badge-lg badge-light-danger align-self-center px-2">74%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-abstract-24 fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Tests</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">You take 12 subjects at this
+                                      semester</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">43</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">53</span>
+
+                                  <span class="badge badge-lg badge-light-info align-self-center px-2">65%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+
+                              <!--begin::Item-->
+                              <div class="d-flex border border-gray-300 border-dashed rounded p-6 mb-6">
+                                <!--begin::Block-->
+                                <div class="d-flex align-items-center flex-grow-1 me-2 me-sm-5">
+                                  <!--begin::Symbol-->
+                                  <div class="symbol symbol-50px me-4">
+                                    <span class="symbol-label">
+                                      <i class="ki-duotone ki-timer fs-2qx text-primary"><span
+                                          class="path1"></span><span class="path2"></span><span
+                                          class="path3"></span></i>
+                                    </span>
+                                  </div>
+                                  <!--end::Symbol-->
+
+                                  <!--begin::Section-->
+                                  <div class="me-2">
+                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold">Attendance</a>
+
+                                    <span class="text-gray-500 fw-bold d-block fs-7">Great, you always attending class.
+                                      keep it up</span>
+                                  </div>
+                                  <!--end::Section-->
+                                </div>
+                                <!--end::Block-->
+
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                  <span class="text-gray-900 fw-bolder fs-2x">53</span>
+
+                                  <span class="fw-semibold fs-2 text-gray-600 mx-1 pt-1">/</span>
+
+                                  <span class="text-gray-600 fw-semibold fs-2 me-3 pt-2">94</span>
+
+                                  <span class="badge badge-lg badge-light-primary align-self-center px-2">87%</span>
+                                </div>
+                                <!--end::Info-->
+                              </div>
+                              <!--end::Item-->
+                            </div>
+                            <!--end::Items-->
+
+                            <!--begin::Container-->
+                            <div
+                              class="d-flex justify-content-between flex-column w-225px w-md-600px mx-auto mx-md-0 pt-3 pb-10">
+                              <!--begin::Title-->
+                              <div class="fs-4 fw-bold text-gray-900 text-center mb-5">
+                                Session Attendance <br>
+                                for Current Academic Year
+                              </div>
+                              <!--end::Title-->
+
+                              <!--begin::Chart-->
+                              <div id="kt_chart_widgets_22_chart_2" class="mx-auto mb-4"></div>
+                              <!--end::Chart-->
+
+                              <!--begin::Labels-->
+                              <div class="mx-auto">
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-success me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Precent(133)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-primary me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Illness(9)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-info me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Late(2)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+
+                                <!--begin::Label-->
+                                <div class="d-flex align-items-center mb-2">
+                                  <!--begin::Bullet-->
+                                  <div class="bullet bullet-dot w-8px h-7px bg-danger me-2"></div>
+                                  <!--end::Bullet-->
+
+                                  <!--begin::Label-->
+                                  <div class="fs-8 fw-semibold text-muted">Absent(3)</div>
+                                  <!--end::Label-->
+                                </div>
+                                <!--end::Label-->
+                              </div>
+                              <!--end::Labels-->
+                            </div>
+                            <!--end::Container-->
+                          </div>
+                          <!--end::Wrapper-->
+                        </div>
+                        <!--end::Tap pane-->
+
+                      </div>
+                      <!--end::Tab Content-->
+                    </div>
+                    <!--end: Card Body-->
+                  </div>
+                  <!--end::Chart widget 22-->
+                </div>
+                <!--end::Col-->
+
+                <!--begin::Col-->
+                <div class="col-xxl-4">
+
+                  <!--begin::Slider Widget 3-->
+                  <div id="kt_sliders_widget_3_slider" class="card card-flush carousel slide h-xl-100"
+                    data-bs-ride="carousel" data-bs-interval="5000">
+                    <!--begin::Header-->
+                    <div class="card-header pt-5 mb-5">
+                      <!--begin::Title-->
+                      <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bold text-gray-900">Academic Performance</span>
+                        <span class="text-gray-500 mt-1 fw-semibold fs-7">Avg. 72% completed lessons</span>
+                      </h3>
+                      <!--end::Title-->
+
+                      <!--begin::Toolbar-->
+                      <div class="card-toolbar">
+                        <div class="d-flex justify-content-end">
+                          <a href="#kt_sliders_widget_3_slider"
+                            class="carousel-control-prev position-relative me-5 active" role="button"
+                            data-bs-slide="prev">
+                            <i class="ki-duotone ki-left-square fs-2x text-gray-500"><span class="path1"></span><span
+                                class="path2"></span></i> </a>
+                          <a href="#kt_sliders_widget_3_slider" class="carousel-control-next position-relative me-1"
+                            role="button" data-bs-slide="next">
+                            <i class="ki-duotone ki-right-square fs-2x text-gray-500"><span class="path1"></span><span
+                                class="path2"></span></i> </a>
+                        </div>
+                      </div>
+                      <!--end::Toolbar-->
+                    </div>
+                    <!--end::Header-->
+
+                    <!--begin::Body-->
+                    <div class="card-body p-0">
+                      <!--begin::Carousel-->
+                      <div class="carousel-inner">
+
+                        <!--begin::Item-->
+                        <div class="carousel-item show active">
+                          <!--begin::Title-->
+                          <span class="text-gray-800 fw-bold fs-4 mb-3 px-8">
+                            Coding </span>
+                          <!--end::Title-->
+
+                          <!--begin::Statistics-->
+                          <div class="d-flex align-items-center w-100 px-8">
+                            <!--begin::Number-->
+                            <span class="fs-2qx text-gray-800 fw-bold">
+                              6 </span>
+                            <!--end::Number-->
+
+                            <!--begin::Progress-->
+                            <div class="progress h-6px w-100 mx-3 bg-light-primary">
+                              <div class="progress-bar bg-primary" role="progressbar" style="width: 62%"
+                                aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                            <!--end::Progress-->
+
+                            <!--begin::Value-->
+                            <span class="text-gray-500 fw-bold fs-4">
+                              62%
+                            </span>
+                            <!--end::Value-->
+                          </div>
+                          <!--end::Statistics-->
+
+                          <!--begin::Chart-->
+                          <div id="kt_sliders_widget_3_chart_1" class="min-h-auto ps-4 pe-6 initialized"
+                            style="height: 330px; min-height: 345px;">
+                            <div id="apexcharts1ognhd85" class="apexcharts-canvas apexcharts1ognhd85 apexcharts-theme-"
+                              style="width: 677px; height: 330px;"><svg id="SvgjsSvg1496" width="677" height="330"
+                                xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
+                                class="apexcharts-svg apexcharts-zoomable" xmlns:data="ApexChartsNS"
+                                transform="translate(0, 0)">
+                                <foreignObject x="0" y="0" width="677" height="330">
+                                  <div class="apexcharts-legend" xmlns="http://www.w3.org/1999/xhtml"
+                                    style="max-height: 165px;"></div>
+                                  <style type="text/css">
+                                    .apexcharts-flip-y {
+                                      transform: scaleY(-1) translateY(-100%);
+                                      transform-origin: top;
+                                      transform-box: fill-box;
+                                    }
+
+                                    .apexcharts-flip-x {
+                                      transform: scaleX(-1);
+                                      transform-origin: center;
+                                      transform-box: fill-box;
+                                    }
+
+                                    .apexcharts-legend {
+                                      display: flex;
+                                      overflow: auto;
+                                      padding: 0 10px;
+                                    }
+
+                                    .apexcharts-legend.apx-legend-position-bottom,
+                                    .apexcharts-legend.apx-legend-position-top {
+                                      flex-wrap: wrap
+                                    }
+
+                                    .apexcharts-legend.apx-legend-position-right,
+                                    .apexcharts-legend.apx-legend-position-left {
+                                      flex-direction: column;
+                                      bottom: 0;
+                                    }
+
+                                    .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left,
+                                    .apexcharts-legend.apx-legend-position-top.apexcharts-align-left,
+                                    .apexcharts-legend.apx-legend-position-right,
+                                    .apexcharts-legend.apx-legend-position-left {
+                                      justify-content: flex-start;
+                                    }
+
+                                    .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center,
+                                    .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+                                      justify-content: center;
+                                    }
+
+                                    .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right,
+                                    .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+                                      justify-content: flex-end;
+                                    }
+
+                                    .apexcharts-legend-series {
+                                      cursor: pointer;
+                                      line-height: normal;
+                                      display: flex;
+                                      align-items: center;
+                                    }
+
+                                    .apexcharts-legend-text {
+                                      position: relative;
+                                      font-size: 14px;
+                                    }
+
+                                    .apexcharts-legend-text *,
+                                    .apexcharts-legend-marker * {
+                                      pointer-events: none;
+                                    }
+
+                                    .apexcharts-legend-marker {
+                                      position: relative;
+                                      display: flex;
+                                      align-items: center;
+                                      justify-content: center;
+                                      cursor: pointer;
+                                      margin-right: 1px;
+                                    }
+
+                                    .apexcharts-legend-series.apexcharts-no-click {
+                                      cursor: auto;
+                                    }
+
+                                    .apexcharts-legend .apexcharts-hidden-zero-series,
+                                    .apexcharts-legend .apexcharts-hidden-null-series {
+                                      display: none !important;
+                                    }
+
+                                    .apexcharts-inactive-legend {
+                                      opacity: 0.45;
+                                    }
+                                  </style>
+                                </foreignObject>
+                                <g id="SvgjsG1505" class="apexcharts-datalabels-group"
+                                  transform="translate(0, 0) scale(1)"></g>
+                                <g id="SvgjsG1506" class="apexcharts-datalabels-group"
+                                  transform="translate(0, 0) scale(1)"></g>
+                                <rect id="SvgjsRect1528" width="0" height="0" x="0" y="0" rx="0" ry="0" opacity="1"
+                                  stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fefefe"></rect>
+                                <g id="SvgjsG1576" class="apexcharts-yaxis" rel="0" transform="translate(22, 0)">
+                                  <g id="SvgjsG1577" class="apexcharts-yaxis-texts-g"><text id="SvgjsText1579"
+                                      font-family="inherit" x="20" y="34" text-anchor="end" dominant-baseline="auto"
+                                      font-size="12px" font-weight="400" fill="#636674"
+                                      class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;">
+                                      <tspan id="SvgjsTspan1580">24</tspan>
+                                      <title>24</title>
+                                    </text><text id="SvgjsText1582" font-family="inherit" x="20" y="96.955"
+                                      text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400"
+                                      fill="#636674" class="apexcharts-text apexcharts-yaxis-label "
+                                      style="font-family: inherit;">
+                                      <tspan id="SvgjsTspan1583">20.5</tspan>
+                                      <title>20.5</title>
+                                    </text><text id="SvgjsText1585" font-family="inherit" x="20" y="159.91"
+                                      text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400"
+                                      fill="#636674" class="apexcharts-text apexcharts-yaxis-label "
+                                      style="font-family: inherit;">
+                                      <tspan id="SvgjsTspan1586">17</tspan>
+                                      <title>17</title>
+                                    </text><text id="SvgjsText1588" font-family="inherit" x="20" y="222.865"
+                                      text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400"
+                                      fill="#636674" class="apexcharts-text apexcharts-yaxis-label "
+                                      style="font-family: inherit;">
+                                      <tspan id="SvgjsTspan1589">13.5</tspan>
+                                      <title>13.5</title>
+                                    </text><text id="SvgjsText1591" font-family="inherit" x="20" y="285.82"
+                                      text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400"
+                                      fill="#636674" class="apexcharts-text apexcharts-yaxis-label "
+                                      style="font-family: inherit;">
+                                      <tspan id="SvgjsTspan1592">10</tspan>
+                                      <title>10</title>
+                                    </text></g>
+                                </g>
+                                <g id="SvgjsG1498" class="apexcharts-inner apexcharts-graphical"
+                                  transform="translate(52, 30)">
+                                  <defs id="SvgjsDefs1497">
+                                    <clipPath id="gridRectMask1ognhd85">
+                                      <rect id="SvgjsRect1502" width="615" height="251.82" x="0" y="0" rx="0" ry="0"
+                                        opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                      </rect>
+                                    </clipPath>
+                                    <clipPath id="gridRectBarMask1ognhd85">
+                                      <rect id="SvgjsRect1503" width="622" height="258.82" x="-3.5" y="-3.5" rx="0"
+                                        ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0"
+                                        fill="#fff"></rect>
+                                    </clipPath>
+                                    <clipPath id="gridRectMarkerMask1ognhd85">
+                                      <rect id="SvgjsRect1504" width="615" height="251.82" x="0" y="0" rx="0" ry="0"
+                                        opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                                      </rect>
+                                    </clipPath>
+                                    <clipPath id="forecastMask1ognhd85"></clipPath>
+                                    <clipPath id="nonForecastMask1ognhd85"></clipPath>
+                                    <linearGradient id="SvgjsLinearGradient1511" x1="0" y1="0" x2="0" y2="1">
+                                      <stop id="SvgjsStop1512" stop-opacity="0.4" stop-color="rgba(228,40,85,0.4)"
+                                        offset="0"></stop>
+                                      <stop id="SvgjsStop1513" stop-opacity="0" stop-color="rgba(255,255,255,0)"
+                                        offset="0.8"></stop>
+                                      <stop id="SvgjsStop1514" stop-opacity="0" stop-color="rgba(255,255,255,0)"
+                                        offset="1"></stop>
+                                    </linearGradient>
+                                  </defs>
+                                  <g id="SvgjsG1517" class="apexcharts-grid">
+                                    <g id="SvgjsG1518" class="apexcharts-gridlines-horizontal">
+                                      <line id="SvgjsLine1522" x1="0" y1="62.955" x2="615" y2="62.955" stroke="#363843"
+                                        stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line>
+                                      <line id="SvgjsLine1523" x1="0" y1="125.91" x2="615" y2="125.91" stroke="#363843"
+                                        stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line>
+                                      <line id="SvgjsLine1524" x1="0" y1="188.865" x2="615" y2="188.865"
+                                        stroke="#363843" stroke-dasharray="4" stroke-linecap="butt"
+                                        class="apexcharts-gridline"></line>
+                                    </g>
+                                    <g id="SvgjsG1519" class="apexcharts-gridlines-vertical"></g>
+                                    <line id="SvgjsLine1527" x1="0" y1="251.82" x2="615" y2="251.82"
+                                      stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line>
+                                    <line id="SvgjsLine1526" x1="0" y1="1" x2="0" y2="251.82" stroke="transparent"
+                                      stroke-dasharray="0" stroke-linecap="butt"></line>
+                                  </g>
+                                  <g id="SvgjsG1520" class="apexcharts-grid-borders">
+                                    <line id="SvgjsLine1521" x1="0" y1="0" x2="615" y2="0" stroke="#363843"
+                                      stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line>
+                                    <line id="SvgjsLine1525" x1="0" y1="251.82" x2="615" y2="251.82" stroke="#363843"
+                                      stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line>
+                                  </g>
+                                  <g id="SvgjsG1507" class="apexcharts-area-series apexcharts-plot-series">
+                                    <g id="SvgjsG1508" class="apexcharts-series" zIndex="0" seriesName="Lessons"
+                                      data:longestSeries="true" rel="1" data:realIndex="0">
+                                      <path id="SvgjsPath1515"
+                                        d="M 0 89.93571428571425C 16.557692307692307 89.93571428571425 30.75 53.96142857142854 47.30769230769231 53.96142857142854C 63.86538461538461 53.96142857142854 78.0576923076923 53.96142857142854 94.61538461538461 53.96142857142854C 111.17307692307692 53.96142857142854 125.36538461538463 71.94857142857143 141.92307692307693 71.94857142857143C 158.48076923076923 71.94857142857143 172.67307692307693 71.94857142857143 189.23076923076923 71.94857142857143C 205.78846153846155 71.94857142857143 219.98076923076923 107.92285714285714 236.53846153846155 107.92285714285714C 253.09615384615387 107.92285714285714 267.28846153846155 107.92285714285714 283.84615384615387 107.92285714285714C 300.4038461538462 107.92285714285714 314.59615384615387 71.94857142857143 331.1538461538462 71.94857142857143C 347.71153846153845 71.94857142857143 361.9038461538462 71.94857142857143 378.46153846153845 71.94857142857143C 395.0192307692308 71.94857142857143 409.21153846153845 35.97428571428571 425.7692307692308 35.97428571428571C 442.3269230769231 35.97428571428571 456.5192307692308 35.97428571428571 473.0769230769231 35.97428571428571C 489.63461538461536 35.97428571428571 503.8269230769231 53.96142857142854 520.3846153846154 53.96142857142854C 536.9423076923077 53.96142857142854 551.1346153846154 53.96142857142854 567.6923076923077 53.96142857142854C 584.25 53.96142857142854 598.4423076923077 35.97428571428571 615 35.97428571428571C 615 35.97428571428571 615 35.97428571428571 615 251.82 L 0 251.82z"
+                                        fill="url(#SvgjsLinearGradient1511)" fill-opacity="1" stroke-opacity="1"
+                                        stroke-linecap="butt" stroke-width="0" stroke-dasharray="0"
+                                        class="apexcharts-area" index="0" clip-path="url(#gridRectMask1ognhd85)"
+                                        pathTo="M 0 89.93571428571425C 16.557692307692307 89.93571428571425 30.75 53.96142857142854 47.30769230769231 53.96142857142854C 63.86538461538461 53.96142857142854 78.0576923076923 53.96142857142854 94.61538461538461 53.96142857142854C 111.17307692307692 53.96142857142854 125.36538461538463 71.94857142857143 141.92307692307693 71.94857142857143C 158.48076923076923 71.94857142857143 172.67307692307693 71.94857142857143 189.23076923076923 71.94857142857143C 205.78846153846155 71.94857142857143 219.98076923076923 107.92285714285714 236.53846153846155 107.92285714285714C 253.09615384615387 107.92285714285714 267.28846153846155 107.92285714285714 283.84615384615387 107.92285714285714C 300.4038461538462 107.92285714285714 314.59615384615387 71.94857142857143 331.1538461538462 71.94857142857143C 347.71153846153845 71.94857142857143 361.9038461538462 71.94857142857143 378.46153846153845 71.94857142857143C 395.0192307692308 71.94857142857143 409.21153846153845 35.97428571428571 425.7692307692308 35.97428571428571C 442.3269230769231 35.97428571428571 456.5192307692308 35.97428571428571 473.0769230769231 35.97428571428571C 489.63461538461536 35.97428571428571 503.8269230769231 53.96142857142854 520.3846153846154 53.96142857142854C 536.9423076923077 53.96142857142854 551.1346153846154 53.96142857142854 567.6923076923077 53.96142857142854C 584.25 53.96142857142854 598.4423076923077 35.97428571428571 615 35.97428571428571C 615 35.97428571428571 615 35.97428571428571 615 251.82 L 0 251.82z"
+                                        pathFrom="M 0 431.69142857142856 L 0 431.69142857142856 L 47.30769230769231 431.69142857142856 L 94.61538461538461 431.69142857142856 L 141.92307692307693 431.69142857142856 L 189.23076923076923 431.69142857142856 L 236.53846153846155 431.69142857142856 L 283.84615384615387 431.69142857142856 L 331.1538461538462 431.69142857142856 L 378.46153846153845 431.69142857142856 L 425.7692307692308 431.69142857142856 L 473.0769230769231 431.69142857142856 L 520.3846153846154 431.69142857142856 L 567.6923076923077 431.69142857142856 L 615 431.69142857142856z">
+                                      </path>
+                                      <path id="SvgjsPath1516"
+                                        d="M 0 89.93571428571425C 16.557692307692307 89.93571428571425 30.75 53.96142857142854 47.30769230769231 53.96142857142854C 63.86538461538461 53.96142857142854 78.0576923076923 53.96142857142854 94.61538461538461 53.96142857142854C 111.17307692307692 53.96142857142854 125.36538461538463 71.94857142857143 141.92307692307693 71.94857142857143C 158.48076923076923 71.94857142857143 172.67307692307693 71.94857142857143 189.23076923076923 71.94857142857143C 205.78846153846155 71.94857142857143 219.98076923076923 107.92285714285714 236.53846153846155 107.92285714285714C 253.09615384615387 107.92285714285714 267.28846153846155 107.92285714285714 283.84615384615387 107.92285714285714C 300.4038461538462 107.92285714285714 314.59615384615387 71.94857142857143 331.1538461538462 71.94857142857143C 347.71153846153845 71.94857142857143 361.9038461538462 71.94857142857143 378.46153846153845 71.94857142857143C 395.0192307692308 71.94857142857143 409.21153846153845 35.97428571428571 425.7692307692308 35.97428571428571C 442.3269230769231 35.97428571428571 456.5192307692308 35.97428571428571 473.0769230769231 35.97428571428571C 489.63461538461536 35.97428571428571 503.8269230769231 53.96142857142854 520.3846153846154 53.96142857142854C 536.9423076923077 53.96142857142854 551.1346153846154 53.96142857142854 567.6923076923077 53.96142857142854C 584.25 53.96142857142854 598.4423076923077 35.97428571428571 615 35.97428571428571"
+                                        fill="none" fill-opacity="1" stroke="#e42855" stroke-opacity="1"
+                                        stroke-linecap="butt" stroke-width="3" stroke-dasharray="0"
+                                        class="apexcharts-area" index="0" clip-path="url(#gridRectMask1ognhd85)"
+                                        pathTo="M 0 89.93571428571425C 16.557692307692307 89.93571428571425 30.75 53.96142857142854 47.30769230769231 53.96142857142854C 63.86538461538461 53.96142857142854 78.0576923076923 53.96142857142854 94.61538461538461 53.96142857142854C 111.17307692307692 53.96142857142854 125.36538461538463 71.94857142857143 141.92307692307693 71.94857142857143C 158.48076923076923 71.94857142857143 172.67307692307693 71.94857142857143 189.23076923076923 71.94857142857143C 205.78846153846155 71.94857142857143 219.98076923076923 107.92285714285714 236.53846153846155 107.92285714285714C 253.09615384615387 107.92285714285714 267.28846153846155 107.92285714285714 283.84615384615387 107.92285714285714C 300.4038461538462 107.92285714285714 314.59615384615387 71.94857142857143 331.1538461538462 71.94857142857143C 347.71153846153845 71.94857142857143 361.9038461538462 71.94857142857143 378.46153846153845 71.94857142857143C 395.0192307692308 71.94857142857143 409.21153846153845 35.97428571428571 425.7692307692308 35.97428571428571C 442.3269230769231 35.97428571428571 456.5192307692308 35.97428571428571 473.0769230769231 35.97428571428571C 489.63461538461536 35.97428571428571 503.8269230769231 53.96142857142854 520.3846153846154 53.96142857142854C 536.9423076923077 53.96142857142854 551.1346153846154 53.96142857142854 567.6923076923077 53.96142857142854C 584.25 53.96142857142854 598.4423076923077 35.97428571428571 615 35.97428571428571"
+                                        pathFrom="M 0 431.69142857142856 L 0 431.69142857142856 L 47.30769230769231 431.69142857142856 L 94.61538461538461 431.69142857142856 L 141.92307692307693 431.69142857142856 L 189.23076923076923 431.69142857142856 L 236.53846153846155 431.69142857142856 L 283.84615384615387 431.69142857142856 L 331.1538461538462 431.69142857142856 L 378.46153846153845 431.69142857142856 L 425.7692307692308 431.69142857142856 L 473.0769230769231 431.69142857142856 L 520.3846153846154 431.69142857142856 L 567.6923076923077 431.69142857142856 L 615 431.69142857142856"
+                                        fill-rule="evenodd"></path>
+                                      <g id="SvgjsG1509"
+                                        class="apexcharts-series-markers-wrap apexcharts-hidden-element-shown"
+                                        data:realIndex="0">
+                                        <g class="apexcharts-series-markers">
+                                          <path id="SvgjsPath1596" d="M 0, 0 
+           m -0, 0 
+           a 0,0 0 1,0 0,0 
+           a 0,0 0 1,0 -0,0" fill="#e42855" fill-opacity="1" stroke="#e42855" stroke-opacity="0.9"
+                                            stroke-linecap="butt" stroke-width="3" stroke-dasharray="0" cx="0" cy="0"
+                                            shape="circle" class="apexcharts-marker w7j5umr9y no-pointer-events"
+                                            default-marker-size="0"></path>
+                                        </g>
+                                      </g>
+                                    </g>
+                                    <g id="SvgjsG1510" class="apexcharts-datalabels" data:realIndex="0"></g>
+                                  </g>
+                                  <line id="SvgjsLine1529" x1="0" y1="0" x2="0" y2="251.82" stroke="#e42855"
+                                    stroke-dasharray="3" stroke-linecap="butt" class="apexcharts-xcrosshairs" x="0"
+                                    y="0" width="1" height="251.82" fill="#b1b9c4" filter="none" fill-opacity="0.9"
+                                    stroke-width="1"></line>
+                                  <line id="SvgjsLine1530" x1="0" y1="0" x2="615" y2="0" stroke="#b6b6b6"
+                                    stroke-dasharray="0" stroke-width="1" stroke-linecap="butt"
+                                    class="apexcharts-ycrosshairs"></line>
+                                  <line id="SvgjsLine1531" x1="0" y1="0" x2="615" y2="0" stroke-dasharray="0"
+                                    stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line>
+                                  <g id="SvgjsG1532" class="apexcharts-xaxis" transform="translate(0, 0)">
+                                    <g id="SvgjsG1533" class="apexcharts-xaxis-texts-g" transform="translate(0, -10)">
+                                      <text id="SvgjsText1535" font-family="inherit" x="0" y="273.82" text-anchor="end"
+                                        dominant-baseline="auto" font-size="12px" font-weight="400" fill="#636674"
+                                        class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"
+                                        transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1536"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1538" font-family="inherit" x="47.3076923076923"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1539"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1541" font-family="inherit" x="94.61538461538461"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 95.61538696289062 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1542">Apr 06</tspan>
+                                        <title>Apr 06</title>
+                                      </text><text id="SvgjsText1544" font-family="inherit" x="141.9230769230769"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1545"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1547" font-family="inherit" x="189.2307692307692"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 190.23077392578125 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1548">Apr 08</tspan>
+                                        <title>Apr 08</title>
+                                      </text><text id="SvgjsText1550" font-family="inherit" x="236.53846153846152"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1551"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1553" font-family="inherit" x="283.84615384615387"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 284.9057312011719 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1554">Apr 11</tspan>
+                                        <title>Apr 11</title>
+                                      </text><text id="SvgjsText1556" font-family="inherit" x="331.1538461538462"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1557"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1559" font-family="inherit" x="378.4615384615385"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 379.5836181640625 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1560">Apr 14</tspan>
+                                        <title>Apr 14</title>
+                                      </text><text id="SvgjsText1562" font-family="inherit" x="425.76923076923083"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1563"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1565" font-family="inherit" x="473.07692307692315"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 474.0769348144531 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1566">Apr 16</tspan>
+                                        <title>Apr 16</title>
+                                      </text><text id="SvgjsText1568" font-family="inherit" x="520.3846153846154"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1569"></tspan>
+                                        <title></title>
+                                      </text><text id="SvgjsText1571" font-family="inherit" x="567.6923076923076"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;"
+                                        transform="rotate(0 568.6923217773438 268.32000732421875)">
+                                        <tspan id="SvgjsTspan1572">Apr 18</tspan>
+                                        <title>Apr 18</title>
+                                      </text><text id="SvgjsText1574" font-family="inherit" x="614.9999999999999"
+                                        y="273.82" text-anchor="end" dominant-baseline="auto" font-size="12px"
+                                        font-weight="400" fill="#636674" class="apexcharts-text apexcharts-xaxis-label "
+                                        style="font-family: inherit;" transform="rotate(0 1 -1)">
+                                        <tspan id="SvgjsTspan1575"></tspan>
+                                        <title></title>
+                                      </text>
+                                    </g>
+                                  </g>
+                                  <g id="SvgjsG1593" class="apexcharts-yaxis-annotations"></g>
+                                  <g id="SvgjsG1594" class="apexcharts-xaxis-annotations"></g>
+                                  <g id="SvgjsG1595" class="apexcharts-point-annotations"></g>
+                                  <rect id="SvgjsRect1597" width="0" height="0" x="0" y="0" rx="0" ry="0" opacity="1"
+                                    stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fefefe"
+                                    class="apexcharts-zoom-rect"></rect>
+                                  <rect id="SvgjsRect1598" width="0" height="0" x="0" y="0" rx="0" ry="0" opacity="1"
+                                    stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fefefe"
+                                    class="apexcharts-selection-rect"></rect>
+                                </g>
+                              </svg>
+                              <div class="apexcharts-tooltip apexcharts-theme-light">
+                                <div class="apexcharts-tooltip-title" style="font-family: inherit; font-size: 12px;">
+                                </div>
+                                <div class="apexcharts-tooltip-series-group apexcharts-tooltip-series-group-0"
+                                  style="order: 1;"><span class="apexcharts-tooltip-marker"
+                                    style="background-color: rgb(228, 40, 85);"></span>
+                                  <div class="apexcharts-tooltip-text" style="font-family: inherit; font-size: 12px;">
+                                    <div class="apexcharts-tooltip-y-group"><span
+                                        class="apexcharts-tooltip-text-y-label"></span><span
+                                        class="apexcharts-tooltip-text-y-value"></span></div>
+                                    <div class="apexcharts-tooltip-goals-group"><span
+                                        class="apexcharts-tooltip-text-goals-label"></span><span
+                                        class="apexcharts-tooltip-text-goals-value"></span></div>
+                                    <div class="apexcharts-tooltip-z-group"><span
+                                        class="apexcharts-tooltip-text-z-label"></span><span
+                                        class="apexcharts-tooltip-text-z-value"></span></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="apexcharts-xaxistooltip apexcharts-xaxistooltip-bottom apexcharts-theme-light">
+                                <div class="apexcharts-xaxistooltip-text"
+                                  style="font-family: inherit; font-size: 12px;"></div>
+                              </div>
+                              <div
+                                class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light">
+                                <div class="apexcharts-yaxistooltip-text"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--end::Chart-->
+                        </div>
+                        <!--end::Item-->
+
+                        <!--begin::Item-->
+                        <div class="carousel-item">
+                          <!--begin::Title-->
+                          <span class="text-gray-800 fw-bold fs-4 mb-3 px-8">
+                            Robotics </span>
+                          <!--end::Title-->
+
+                          <!--begin::Statistics-->
+                          <div class="d-flex align-items-center w-100 px-8">
+                            <!--begin::Number-->
+                            <span class="fs-2qx text-gray-800 fw-bold">
+                              4 </span>
+                            <!--end::Number-->
+
+                            <!--begin::Progress-->
+                            <div class="progress h-6px w-100 mx-3 bg-light-danger">
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 73%"
+                                aria-valuenow="73" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                            <!--end::Progress-->
+
+                            <!--begin::Value-->
+                            <span class="text-gray-500 fw-bold fs-4">
+                              73%
+                            </span>
+                            <!--end::Value-->
+                          </div>
+                          <!--end::Statistics-->
+
+                          <!--begin::Chart-->
+                          <div id="kt_sliders_widget_3_chart_2" class="min-h-auto ps-4 pe-6 initialized"
+                            style="height: 330px; min-height: 345px;">
+                            <div id="apexchartsrfdlrqvm" class="apexcharts-canvas apexchartsrfdlrqvm"
+                              style="width: 0px; height: 330px;"><svg id="SvgjsSvg1600" width="0" height="330"
+                                xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
+                                class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)">
+                                <foreignObject x="0" y="0" width="0" height="330">
+                                  <div class="apexcharts-legend" xmlns="http://www.w3.org/1999/xhtml"></div>
+                                </foreignObject>
+                                <g id="SvgjsG1602" class="apexcharts-inner apexcharts-graphical">
+                                  <defs id="SvgjsDefs1601"></defs>
+                                </g>
+                              </svg></div>
+                          </div>
+                          <!--end::Chart-->
+                        </div>
+                        <!--end::Item-->
+
+                      </div>
+                      <!--end::Carousel-->
+                    </div>
+                    <!--end::Body-->
+                  </div>
+                  <!--end::Slider Widget 3-->
+                </div>
+                <!--end::Col-->
+              </div>
+            </div>
+            <!--end::Content container-->
+          </div>
+          <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
+        <!--begin::Footer-->
+        <div id="kt_app_footer" class="app-footer">
+          <!--begin::Footer container-->
+          <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+            <!--begin::Copyright-->
+            <div class="text-gray-900 order-2 order-md-1">
+              <span class="text-muted fw-semibold me-1">2024&copy;</span>
+              <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+            </div>
+            <!--end::Copyright-->
+            <!--begin::Menu-->
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+              <li class="menu-item">
+                <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+              </li>
+              <li class="menu-item">
+                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+              </li>
+              <li class="menu-item">
+                <a href="https://1.envato.market/Vm7VRE" target="_blank" class="menu-link px-2">Purchase</a>
+              </li>
+            </ul>
+            <!--end::Menu-->
+          </div>
+          <!--end::Footer container-->
+        </div>
+        <!--end::Footer-->
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+      <script>
+        // Daily Signups Chart
+        var optionsSignups = {
+          series: [{
+            name: 'Daily Signups',
+            data: [11, 44, 40, 40, 52]
+          }],
+          chart: {
+            type: 'line',
+            height: 350
+          },
+          xaxis: {
+            categories: ["2025-01-19", "2025-01-20", "2025-01-21", "2025-01-22", "2025-01-23"]
+          },
+          stroke: {
+            curve: 'smooth'
+          },
+          title: {
+            text: 'Daily Signups',
+            align: 'left',
+            style: {
+              fontFamily: 'Jost, sans-serif'
+            }
+          }
+        };
+
+        var signupsChart = new ApexCharts(document.querySelector("#dailySignupsChart"), optionsSignups);
+        signupsChart.render();
+
+        // Daily Applications Chart
+        var optionsApplications = {
+          series: [{
+            name: 'Daily Applications',
+            data: []
+          }],
+          chart: {
+            type: 'bar',
+            height: 350
+          },
+          xaxis: {
+            categories: []
+          },
+          stroke: {
+            width: 1,
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shade: 'dark',
+              type: "horizontal",
+            }
+          },
+          title: {
+            text: 'Daily Applications',
+            align: 'left',
+            style: {
+              fontFamily: 'Jost, sans-serif'
+            }
+          }
+        };
+
+        var applicationsChart = new ApexCharts(document.querySelector("#dailyApplicationsChart"), optionsApplications);
+        applicationsChart.render();
+
+        window.Echo.private('dashboard')
+          .listen('SessionLimitReached', (event) => {
+            console.log(event);
+
+            // Display the message on the dashboard
+            const message = `${event.name} has reached their session limit.`;
+            const notificationElement = document.getElementById('notifications');
+            const newNotification = document.createElement('div');
+            newNotification.innerText = message;
+            notificationElement.appendChild(newNotification);
+          });
+      </script>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <div id="overlayer">
+    <div class="loader-overlay">
+      <div class="dm-spin-dots spin-lg">
+        <span class="spin-dot badge-dot dot-primary"></span>
+        <span class="spin-dot badge-dot dot-primary"></span>
+        <span class="spin-dot badge-dot dot-primary"></span>
+        <span class="spin-dot badge-dot dot-primary"></span>
+      </div>
+    </div>
+  </div>
+  <div class="overlay-dark-sidebar"></div>
+  <div class="customizer-overlay"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery/jquery-ui.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/bootstrap/popper.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/bootstrap/bootstrap.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/moment/moment.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/accordion.js"></script>
+  <!-- <script src="https://app.pandabot.co.za/assets/vendor_assets/js/apexcharts.min.js"></script> -->
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/autoComplete.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/Chart.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/daterangepicker.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/drawer.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/dynamicBadge.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/dynamicCheckbox.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/footable.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/fullcalendar@5.2.0.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/google-chart.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.countdown.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.filterizr.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.peity.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/jquery.star-rating-svg.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/leaflet.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/leaflet.markercluster.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/loader.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/message.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/moment.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/muuri.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/notification.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/popover.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/select2.full.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/slick.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/trumbowyg.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/vendor_assets/js/wickedpicker.min.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/apexmain.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/charts.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/drag-drop.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/footable.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/full-calendar.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/googlemap-init.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/icon-loader.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/jvectormap-init.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/leaflet-init.js"></script>
+  <script src="https://app.pandabot.co.za/assets/theme_assets/js/main.js"></script>
+  <script
+    data-navigate-once="true">window.livewireScriptConfig = { "csrf": "7Oo1RWr09ABqUN7z2MZg36yZ8WKyEsKcQKjbaDsB", "uri": "\/livewire\/update", "progressBar": "", "nonce": "" };</script>
+  <!--end::Global Javascript Bundle-->
+  <!--begin::Vendors Javascript(used for this page only)-->
+  <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+  <script src="assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <!--end::Vendors Javascript-->
+  <!--begin::Custom Javascript(used for this page only)-->
+  <script src="assets/js/widgets.bundle.js"></script>
+  <script src="assets/js/custom/widgets.js"></script>
+  <script src="assets/js/custom/apps/chat/chat.js"></script>
+  <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-account.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/type.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/budget.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/settings.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/team.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/targets.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/files.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/complete.js"></script>
+  <script src="assets/js/custom/utilities/modals/create-project/main.js"></script>
+  <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+  <!--end::Custom Javascript-->
+  <!--end::Javascript-->
+
+
+</body>
+
+</html>
