@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <base href="../../../">
+  <title>Assigned Tickets</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+  <!-- FontAwesome for the arrow icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    .back-arrow {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: #000;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+    .back-arrow:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle m-0" id="open-tickets">
+                <thead>
+                  <tr>
+                    <th>Ticket Number</th>
+                    <th>Assigned to</th>
+                    <th>Priority</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="kt_modal_new_ticket" tabindex="-1" aria-labelledby="kt_modal_new_ticket_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="kt_modal_new_ticket_label">Assign Tickets</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="assign-person" class="form-label">Select Person</label>
+            <select class="form-select" id="assign-person">
+              <option value="1">Dev 1</option>
+              <option value="2">Dev 2</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="ticket-priority" class="form-label">Set Priority</label>
+            <select class="form-select" id="ticket-priority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <h6>Select Tickets:</h6>
+          <div class="form-check" id="ticket1-container">
+            <input class="form-check-input" type="checkbox" value="ticket1" id="ticket1">
+            <label class="form-check-label" for="ticket1">Ticket 1</label>
+          </div>
+          <div class="form-check" id="ticket2-container">
+            <input class="form-check-input" type="checkbox" value="ticket2" id="ticket2">
+            <label class="form-check-label" for="ticket2">Ticket 2</label>
+          </div>
+          <div class="form-check" id="ticket3-container">
+            <input class="form-check-input" type="checkbox" value="ticket3" id="ticket3">
+            <label class="form-check-label" for="ticket3">Ticket 3</label>
+          </div>
+          <div class="form-check" id="ticket4-container">
+            <input class="form-check-input" type="checkbox" value="ticket4" id="ticket4">
+            <label class="form-check-label" for="ticket4">Ticket 4</label>
+          </div>
+          <div class="form-check" id="ticket5-container">
+            <input class="form-check-input" type="checkbox" value="ticket5" id="ticket5">
+            <label class="form-check-label" for="ticket5">Ticket 5</label>
+          </div>
+          <div class="form-check" id="ticket6-container">
+            <input class="form-check-input" type="checkbox" value="ticket6" id="ticket6">
+            <label class="form-check-label" for="ticket6">Ticket 6</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="assign-tickets-btn">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cute Arrow Back Button -->
+  <button onclick="window.history.back()" class="back-arrow">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+
+  <button onclick="clearLocalStorage()" class="btn btn-danger">Clear Data</button>
+
+  <script>
+    if (window.top != window.self) {
+      window.top.location.replace(window.self.location.href);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const assignButton = document.getElementById("assign-tickets-btn");
+      const assignPersonSelect = document.getElementById("assign-person");
+      const ticketTable = document.getElementById("open-tickets");
+      const ticketBody = ticketTable.querySelector("tbody");
+
+      const assignedData = JSON.parse(localStorage.getItem('assignedTickets')) || [];
+
+      assignedData.forEach(function(assignment) {
+        const { tickets, person, priority } = assignment;
+
+        const devName = person == '1' ? 'Dev 1' : 'Dev 2';
+        let priorityClass = '';
+        let priorityText = '';
+
+        switch (priority) {
+          case 'high':
+            priorityClass = 'bg-danger';
+            priorityText = 'High';
+            break;
+          case 'medium':
+            priorityClass = 'bg-warning';
+            priorityText = 'Medium';
+            break;
+          case 'low':
+            priorityClass = 'bg-secondary';
+            priorityText = 'Low';
+            break;
+        }
+
+        tickets.forEach(function(ticket) {
+          if (!document.querySelector(`tr[data-ticket-id="${ticket}"]`)) {
+            const newRow = document.createElement('tr');
+            newRow.classList.add('ticket-row');
+            newRow.setAttribute('data-ticket-id', ticket);
+
+            newRow.innerHTML = `
+              <td>${ticket.replace('ticket', 'Ticket ')}</td>
+              <td class="assigned-to">${devName}</td>
+              <td class="ticket-priority"><span class="badge ${priorityClass}">${priorityText}</span></td>
+            `;
+
+            ticketBody.appendChild(newRow);
+
+            const ticketContainer = document.getElementById(`${ticket}-container`);
+            if (ticketContainer) {
+              ticketContainer.style.display = 'none';
+            }
+          }
+        });
+      });
+
+      assignButton.addEventListener('click', function () {
+        const selectedDev = assignPersonSelect.value;
+        let devName = selectedDev == '1' ? 'Dev 1' : 'Dev 2';
+        const selectedPriority = document.getElementById('ticket-priority').value;
+        let priorityClass = '';
+        let priorityText = '';
+
+        switch (selectedPriority) {
+          case 'high':
+            priorityClass = 'bg-danger';
+            priorityText = 'High';
+            break;
+          case 'medium':
+            priorityClass = 'bg-warning';
+            priorityText = 'Medium';
+            break;
+          case 'low':
+            priorityClass = 'bg-secondary';
+            priorityText = 'Low';
+            break;
+        }
+
+        const selectedTickets = document.querySelectorAll('.form-check-input:checked');
+        const newAssignedTickets = [];
+
+        selectedTickets.forEach((checkbox) => {
+          const ticketId = checkbox.id;
+          newAssignedTickets.push(ticketId);
+          checkbox.disabled = true;
+          const label = document.querySelector(`label[for=${ticketId}]`);
+          if (label) {
+            label.style.textDecoration = "line-through";
+          }
+
+          const newRow = document.createElement('tr');
+          newRow.classList.add('ticket-row');
+          newRow.setAttribute('data-ticket-id', ticketId);
+
+          newRow.innerHTML = `
+            <td>${ticketId.replace('ticket', 'Ticket ')}</td>
+            <td class="assigned-to">${devName}</td>
+            <td class="ticket-priority"><span class="badge ${priorityClass}">${priorityText}</span></td>
+          `;
+
+          ticketBody.appendChild(newRow);
+
+          const ticketContainer = document.getElementById(`${ticketId}-container`);
+          if (ticketContainer) {
+            ticketContainer.style.display = 'none';
+          }
+        });
+
+        const allAssignedTickets = [...assignedData, ...newAssignedTickets];
+        localStorage.setItem('assignedTickets', JSON.stringify(allAssignedTickets));
+
+        // Reset checkboxes and close modal
+        selectedTickets.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        var modal = new bootstrap.Modal(document.getElementById('kt_modal_new_ticket'));
+        modal.hide();
+      });
+    });
+
+    function clearLocalStorage() {
+      localStorage.clear();
+      location.reload();
+    }
+  </script>
+</body>
+</html>

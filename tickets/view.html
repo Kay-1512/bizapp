@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-select2-id="select2-data-147-q88q"><!--begin::Head-->
-
-<head>
+<html lang="en" data-bs-theme="light" data-select2-id="select2-data-147-q88q"><!--begin::Head--><head>
   <base href="../../../">
-  <title>View tickets</title>
+  <title>View All Tickets</title>
   <meta charset="utf-8">
-  <meta name="description"
-    content="The most advanced Tailwind CSS &amp; Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony &amp; Laravel versions. Grab your copy now and get life-time updates for free.">
-  <meta name="keywords"
-    content="tailwind, tailwindcss, metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony &amp; Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon">
+  <meta name="description" content="2">
+  <meta name="keywords" content="tailwind, tailwindcss, metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony &amp; Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
-  <meta property="og:title"
-    content="Metronic - The World's #1 Selling Tailwind CSS &amp; Bootstrap Admin Template by KeenThemes">
+  <meta property="og:title" content="Metronic - The World's #1 Selling Tailwind CSS &amp; Bootstrap Admin Template by KeenThemes">
   <meta property="og:url" content="https://keenthemes.com/metronic">
   <meta property="og:site_name" content="Metronic by Keenthemes">
   <link rel="canonical" href="http://preview.keenthemes.comapps/support-center/tickets/view.html">
@@ -30,15 +25,47 @@
   <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css">
   <!--end::Global Stylesheets Bundle-->
   <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </head>
-<!--end::Head-->
-<!--begin::Body-->
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-  data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-  data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true"
-  data-kt-app-toolbar-enabled="true" class="app-default modal-open" data-select2-id="select2-data-kt_app_body"
-  style="overflow: hidden; padding-right: 0px;">
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default" data-select2-id="select2-data-kt_app_body" style="overflow: hidden; padding-right: 0px;">
   <!--begin::Theme mode setup on page load-->
   <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
   <!--end::Theme mode setup on page load-->
@@ -49,8 +76,7 @@
       <!--begin::Header-->
 
       <!--begin::Wrapper-->
-      <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper"
-        data-select2-id="select2-data-kt_app_wrapper">
+      <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper" data-select2-id="select2-data-kt_app_wrapper">
         <!--begin::Sidebar-->
 
         <!--end::Sidebar-->
@@ -72,28 +98,13 @@
                   <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-muted">
-
                     </li>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-
-                    <!--end::Item-->
-                    <!--begin::Item-->
-
-                    <!--end::Item-->
-                    <!--begin::Item-->
                     <li class="breadcrumb-item">
-
-                    </li>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">Tickets</li>
-                    <!--end::Item-->
+                    </li><li class="breadcrumb-item text-muted">Tickets</li>
                   </ul>
                   <!--end::Breadcrumb-->
                 </div>
-                <!--end::Page title-->
-                <!--begin::Actions-->
+               
                 <div class="d-flex align-items-center gap-2 gap-lg-3">
                   <!--begin::Filter menu-->
                   <div class="m-0">
@@ -101,8 +112,7 @@
 
                     <!--end::Menu toggle-->
                     <!--begin::Menu 1-->
-                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                      id="kt_menu_673c0c8f5602e">
+                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_673c0c8f5602e">
                       <!--begin::Header-->
                       <div class="px-7 py-5">
                         <div class="fs-5 text-gray-900 fw-bold">Filter Options</div>
@@ -120,27 +130,14 @@
                           <!--end::Label-->
                           <!--begin::Input-->
                           <div>
-                            <select class="form-select form-select-solid select2-hidden-accessible" multiple=""
-                              data-kt-select2="true" data-close-on-select="false" data-placeholder="Select option"
-                              data-dropdown-parent="#kt_menu_673c0c8f5602e" data-allow-clear="true"
-                              data-select2-id="select2-data-7-eof3" tabindex="-1" aria-hidden="true"
-                              data-kt-initialized="1">
+                            <select class="form-select form-select-solid select2-hidden-accessible" multiple="" data-kt-select2="true" data-close-on-select="false" data-placeholder="Select option" data-dropdown-parent="#kt_menu_673c0c8f5602e" data-allow-clear="true" data-select2-id="select2-data-7-eof3" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
                               <option></option>
                               <option value="1">Approved</option>
                               <option value="2">Pending</option>
                               <option value="2">In Process</option>
                               <option value="2">Rejected</option>
-                            </select><span class="select2 select2-container select2-container--bootstrap5" dir="ltr"
-                              data-select2-id="select2-data-8-geo9" style="width: 100%;"><span class="selection"><span
-                                  class="select2-selection select2-selection--multiple form-select form-select-solid"
-                                  role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"
-                                  aria-disabled="false">
-                                  <ul class="select2-selection__rendered" id="select2-xgx8-container"></ul><span
-                                    class="select2-search select2-search--inline"><textarea
-                                      class="select2-search__field" type="search" tabindex="0" autocorrect="off"
-                                      autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list"
-                                      autocomplete="off" aria-label="Search" aria-describedby="select2-xgx8-container"
-                                      placeholder="Select option" style="width: 100%;"></textarea></span>
+                            </select><span class="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-8-geo9" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false">
+                                  <ul class="select2-selection__rendered" id="select2-xgx8-container"></ul><span class="select2-search select2-search--inline"><textarea class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-xgx8-container" placeholder="Select option" style="width: 100%;"></textarea></span>
                                 </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                           </div>
                           <!--end::Input-->
@@ -176,8 +173,7 @@
                           <!--end::Label-->
                           <!--begin::Switch-->
                           <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="" name="notifications"
-                              checked="checked">
+                            <input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked">
                             <label class="form-check-label">Enabled</label>
                           </div>
                           <!--end::Switch-->
@@ -185,10 +181,8 @@
                         <!--end::Input group-->
                         <!--begin::Actions-->
                         <div class="d-flex justify-content-end">
-                          <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2"
-                            data-kt-menu-dismiss="true">Reset</button>
-                          <button type="submit" class="btn btn-sm btn-primary"
-                            data-kt-menu-dismiss="true">Apply</button>
+                          <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
+                          <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
                         </div>
                         <!--end::Actions-->
                       </div>
@@ -200,7 +194,9 @@
                   <!--begin::Secondary button-->
                   <!--end::Secondary button-->
                   <!--begin::Primary button-->
-
+                  <a href="tickets/assigned.html" class="btn btn-primary fw-bold fs-8 fs-lg-base">
+                    View Assigned Tickets
+                  </a>
                   <!--end::Primary button-->
                 </div>
                 <!--end::Actions-->
@@ -209,282 +205,400 @@
             </div>
             <!--end::Toolbar-->
             <!--begin::Content-->
-            <div id="kt_app_content" class="app-content flex-column-fluid"
-              data-select2-id="select2-data-kt_app_content">
-              <!--begin::Content container-->
-              <div id="kt_app_content_container" class="app-container container-xxl"
-                data-select2-id="select2-data-kt_app_content_container">
-                <!--begin::Hero card-->
-                <div class="card mb-12">
-                  <!--begin::Hero body-->
-                  <div class="card-body flex-column p-5">
-                    <!--begin::Hero content-->
-
-                    <!--end::Hero content-->
-                    <!--begin::Hero nav-->
-                    <div class="card-rounded bg-light d-flex flex-stack flex-wrap p-5">
-                      <!--begin::Nav-->
-                      <ul class="nav flex-wrap border-transparent fw-bold">
-                        <!-- begin::Nav item-->
-
-                        <li class="nav-item my-1">
-                          <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase"
-                            href="tickets/view.html">All tickets</a>
-                        </li>
-
-                        <li class="nav-item my-1">
-                          <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase"
-                            href="tickets/view.html">CHR tickets</a>
-                        </li>
-
-                        <li class="nav-item my-1">
-                          <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase"
-                            href="tickets/view.html">PandaBot tickets</a>
-                        </li>
-
-                        <li class="nav-item my-1">
-                          <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase"
-                            href="tickets/view.html">Other tickets</a>
-                        </li>
-
-                        <li class="nav-item my-1">
-
-                        </li>
-
-                        <li class="nav-item my-1">
-
-                        </li>
-                        <!--end::Nav item-->
-                        <!--begin::Nav item-->
-                        <li class="nav-item my-1">
-
-                        </li>
-                        <!--end::Nav item-->
-                      </ul>
-                      <!--end::Nav-->
-                      <!--begin::Action-->
-
-
-
-                      <!--end::Action-->
+            <div id="kt_app_content" class="app-content flex-column-fluid" data-select2-id="select2-data-kt_app_content">
+<div id="kt_app_content_container" class="app-container container-xxl" data-select2-id="select2-data-kt_app_content_container" style="max-height: 80vh; overflow-y: auto;">
+    <div class="card mb-12">
+        <div class="card-body flex-column p-5">
+            <div class="card-rounded bg-light d-flex flex-stack flex-wrap p-5">
+                <ul class="nav flex-wrap border-transparent fw-bold">
+                    <li class="nav-item my-1">
+                        <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="tickets/view.html">All tickets</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="tickets/view.html">CHR tickets</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="tickets/view.html">PandaBot tickets</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="btn btn-color-gray-600 btn-active-secondary btn-active-color-primary fw-bolder fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="tickets/view.html">Other tickets</a>
+                    </li>
+                    <li class="nav-item my-1"></li>
+                    <li class="nav-item my-1"></li>
+                    <li class="nav-item my-1"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card" data-select2-id="select2-data-145-m181">
+        <div class="card-body" data-select2-id="select2-data-144-sfwq">
+    <div class="d-flex flex-column flex-xl-row p-7" data-select2-id="select2-data-143-54lt">
+    <div class="flex-lg-row-fluid me-xl-15 mb-20 mb-xl-0" data-select2-id="select2-data-142-yugh">
+        <div class="mb-0" data-select2-id="select2-data-141-c0bs">
+            <div class="d-flex align-items-center mb-12">
+                <i class="ki-duotone ki-file-added fs-4qx text-success ms-n2 me-3">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex flex-column">
+                        <h1 class="text-gray-800 fw-semibold">All tickets</h1>
                     </div>
-                    <!--end::Hero nav-->
-                  </div>
-                  <!--end::Hero body-->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#kt_modal_new_ticket" class="btn btn-primary fw-bold fs-8 fs-lg-base">
+                        Assign Ticket
+                    </a>
                 </div>
-                <!--end::Hero card-->
-                <!--begin::Card-->
-                <div class="card" data-select2-id="select2-data-145-m181">
-                  <!--begin::Card body-->
-                  <div class="card-body" data-select2-id="select2-data-144-sfwq">
-                    <!--begin::Layout-->
-                    <div class="d-flex flex-column flex-xl-row p-7" data-select2-id="select2-data-143-54lt">
-                      <!--begin::Content-->
-                      <div class="flex-lg-row-fluid me-xl-15 mb-20 mb-xl-0" data-select2-id="select2-data-142-yugh">
-                        <!--begin::Ticket view-->
-                        <div class="mb-0" data-select2-id="select2-data-141-c0bs">
-                          <!--begin::Heading-->
-                          <div class="d-flex align-items-center mb-12">
-                            <!--begin::Icon-->
-                            <i class="ki-duotone ki-file-added fs-4qx text-success ms-n2 me-3">
-                              <span class="path1"></span>
-                              <span class="path2"></span>
-                            </i>
-                            <div class="d-flex justify-content-between align-items-center w-100">
-                              <div class="d-flex flex-column">
-                                <h1 class="text-gray-800 fw-semibold">All tickets</h1>
-                              </div>
-                              <a href="#" data-bs-toggle="modal" data-bs-target="#kt_modal_new_ticket"
-                                class="btn btn-primary fw-bold fs-8 fs-lg-base">
-                                Assign Ticket
-                              </a>
-                            </div>
-                          </div>
-
-
-                          <div class="mb-15" data-select2-id="select2-data-140-jm8y">
-                            <div class="mb-9 position-relative">
-                              <div class="card card-bordered w-100">
-                                <div class="card-body position-relative">
-                                  <!-- Right-side area: Dropdown and Assigned Label -->
-                                  <div class="position-absolute top-0 end-0 m-2 d-flex align-items-center">
-                                    <!-- "Assigned" label (will update dynamically to show assigned user's name) -->
-                                    <span class="badge bg-danger me-2" id="assigned-label">Assigned</span>
-                                    <!-- Three-dots dropdown -->
-                                    <div class="dropdown">
-                                      <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                      </button>
-                                      <ul class="dropdown-menu" style="">
-                                        <!-- Assign with submenu -->
-                                        <li class="dropdown-submenu dropend">
-                                          <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
-                                          <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Person 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Person 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Person 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Person 4</a></li>
-                                            <li><a class="dropdown-item" href="#">Person 5</a></li>
-                                          </ul>
-                                        </li>
-                                        <!-- Priority option -->
-                                        <li>
-                                          <a class="dropdown-item dropdown-toggle" href="#">Priority</a>
-                                          <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">High</a></li>
-                                            <li><a class="dropdown-item" href="#">Medium</a></li>
-                                            <li><a class="dropdown-item" href="#">Low</a></li>
-                                          </ul>
-                                        </li>
-                                        </li>
-                                        <!-- Status with submenu -->
-                                        <li class="dropdown-submenu dropend">
-                                          <a class="dropdown-item dropdown-toggle" href="#">Status</a>
-                                          <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Assigned</a></li>
-
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                  <!-- Ticket Header Content -->
-                                  <div class="w-100 d-flex flex-stack mb-8">
-                                    <div class="d-flex align-items-center">
-                                      <div class="symbol symbol-50px me-5">
-                                        <div class="symbol-label fs-1 fw-bold bg-light-success text-success">
-                                          U
-                                        </div>
-                                      </div>
-                                      <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
-                                        <div class="d-flex align-items-center">
-                                          <a href="tickets/Assign.html"
-                                            class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
-                                            John Doe
-                                          </a>
-                                        </div>
-                                        <span class="text-muted fw-semibold fs-6">
-                                          <a href="mailto:johndoe@example.com"
-                                            class="text-decoration-none text-muted">johndoe@example.com</a>
-                                        </span>
-                                      </div>
-                                    </div>
-                                    <div class="text-muted">
-                                      2 days ago
-                                    </div>
-                                  </div>
-                                  <p class="fw-normal fs-5 text-gray-700 m-0">
-                                    Description of the issue...
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Ticket Card for Bob Clarkson (Not assigned, no red tag) -->
-                            <div class="mb-9 position-relative">
-                              <div class="card card-bordered w-100">
-                                <div class="card-body position-relative">
-                                  <!-- Three-dots dropdown on this ticket card -->
-                                  <div class="dropdown position-absolute top-0 end-0 m-2">
-                                    <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown"
-                                      aria-expanded="false">
-                                      <i class="bi bi-three-dots-vertical"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      <li class="dropdown-submenu dropend">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
-                                        <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item" href="#">Karina Clark</a></li>
-                                          <li><a class="dropdown-item" href="#">Robert Doe</a></li>
-                                          <li><a class="dropdown-item" href="#">Niel Owen</a></li>
-                                          <li><a class="dropdown-item" href="#">Olivia Wild</a></li>
-                                          <li><a class="dropdown-item" href="#">Sean Bean</a></li>
-                                        </ul>
-                                      </li>
-                                      <li>
-                                        <a class="dropdown-item" href="#">Priority: Info</a>
-                                      </li>
-                                      <li class="dropdown-submenu dropend">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Status</a>
-                                        <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item" href="#">Assigned</a></li>
-                                          <li><a class="dropdown-item" href="#">Unassigned</a></li>
-                                          <li><a class="dropdown-item" href="#">Complete</a></li>
-                                          <li><a class="dropdown-item" href="#">Uncomplete</a></li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <!-- Ticket Header Content -->
-                                  <div class="w-100 d-flex flex-stack mb-8">
-                                    <div class="d-flex align-items-center">
-                                      <div class="symbol symbol-50px me-5">
-                                        <div class="symbol-label fs-1 fw-bold bg-light-info text-info">
-                                          B
-                                        </div>
-                                      </div>
-                                      <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
-                                        <div class="d-flex align-items-center">
-                                          <a href="tickets/Assign.html"
-                                            class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
-                                            Bob Clarkson
-                                          </a>
-                                        </div>
-                                        <span class="text-muted fw-semibold fs-6">
-                                          <a href="mailto:bobclarkson@example.com"
-                                            class="text-decoration-none text-muted">bobclarkson@example.com</a>
-                                        </span>
-                                      </div>
-                                    </div>
-                                    <div class="text-muted">
-                                      4 days ago
-                                    </div>
-                                  </div>
-                                  <p class="fw-normal fs-5 text-gray-700 m-0">
-                                    I run a team of 20 product managers, developers, QA, and UX. Previously we designed
-                                    everything ourselves.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <ul class="pagination">
-                            <li class="page-item">
-                              <a href="#" class="page-link">
-                                <i class="previous"></i>
-                              </a>
-                            </li>
-                            <li class="page-item">
-                              <a href="#" class="page-link">1</a>
-                            </li>
-                            <li class="page-item active">
-                              <a href="#" class="page-link">2</a>
-                            </li>
-                            <li class="page-item next">
-                              <a href="#" class="page-link">
-                                <i class="next"></i>
-                              </a>
-                            </li>
-                          </ul>
-                          <!--end::Pagination-->
+            </div>
+            <div class="mb-9 position-relative">
+    <div class="card card-bordered w-100">
+        <div class="card-body position-relative">
+            <div class="dropdown position-absolute top-0 end-0 m-2">
+                
+                <ul class="dropdown-menu" style="">
+                    <li class="dropdown-submenu dropend">
+                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Dev 1</a></li>
+                            <li><a class="dropdown-item" href="#">Dev 2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Priority: Info</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-100 d-flex flex-stack mb-8">
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-5">
+                        <div class="symbol-label fs-1 fw-bold bg-light-primary text-primary">
+                            K
                         </div>
-                        <!--end::Ticket view-->
-                      </div>
-
                     </div>
-                    <!--end::Layout-->
-                  </div>
-                  <!--end::Card body-->
+                    <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
+                        <div class="d-flex align-items-center">
+                            <a href="tickets/Assign.html" class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
+                                Karina Clark
+                            </a>
+                        </div>
+                        <span class="text-muted fw-semibold fs-6">
+                            <a href="mailto:karinaclark@example.com" class="text-decoration-none text-muted">karinaclark@example.com</a>
+                        </span>
+                    </div>
                 </div>
+                <div class="text-muted">
+                    1 day ago
+                </div>
+            </div>
+            <p class="fw-normal fs-5 text-gray-700 m-0">
+                Complete the project documentation for the upcoming release.
+            </p>
+        </div>
+    </div>
+</div>
 
+<!-- Ticket 2 (Robert Doe) -->
+<div class="mb-9 position-relative">
+    <div class="card card-bordered w-100">
+        <div class="card-body position-relative">
+            <div class="dropdown position-absolute top-0 end-0 m-2">
+                
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu dropend">
+                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Karina Clark</a></li>
+                            <li><a class="dropdown-item" href="#">Robert Doe</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Priority: Info</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-100 d-flex flex-stack mb-8">
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-5">
+                        <div class="symbol-label fs-1 fw-bold bg-light-secondary text-secondary">
+                            R
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
+                        <div class="d-flex align-items-center">
+                            <a href="tickets/Assign.html" class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
+                                Robert Doe
+                            </a>
+                        </div>
+                        <span class="text-muted fw-semibold fs-6">
+                            <a href="mailto:robertdoe@example.com" class="text-decoration-none text-muted">robertdoe@example.com</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    2 days ago
+                </div>
+            </div>
+            <p class="fw-normal fs-5 text-gray-700 m-0">
+                Review code for bugs before pushing to the main branch.
+            </p>
+        </div>
+    </div>
+</div>
 
+<!-- Ticket 3 (Niel Owen) -->
+<div class="mb-9 position-relative">
+    <div class="card card-bordered w-100">
+        <div class="card-body position-relative">
+            <div class="dropdown position-absolute top-0 end-0 m-2">
+                
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu dropend">
+                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Karina Clark</a></li>
+                            <li><a class="dropdown-item" href="#">Robert Doe</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Priority: Info</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-100 d-flex flex-stack mb-8">
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-5">
+                        <div class="symbol-label fs-1 fw-bold bg-light-primary text-primary">
+                            N
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
+                        <div class="d-flex align-items-center">
+                            <a href="tickets/Assign.html" class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
+                                Niel Owen
+                            </a>
+                        </div>
+                        <span class="text-muted fw-semibold fs-6">
+                            <a href="mailto:nielowen@example.com" class="text-decoration-none text-muted">nielowen@example.com</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    1 week ago
+                </div>
+            </div>
+            <p class="fw-normal fs-5 text-gray-700 m-0">
+                Update the project docs and details before release.
+            </p>
+        </div>
+    </div>
+</div>
 
+<!-- Ticket 4 (Olivia Wild) -->
+<div class="mb-9 position-relative">
+    <div class="card card-bordered w-100">
+        <div class="card-body position-relative">
+            <div class="dropdown position-absolute top-0 end-0 m-2">
+                
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu dropend">
+                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Karina Clark</a></li>
+                            <li><a class="dropdown-item" href="#">Robert Doe</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Priority: Info</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-100 d-flex flex-stack mb-8">
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-5">
+                        <div class="symbol-label fs-1 fw-bold bg-light-danger text-danger">
+                            O
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
+                        <div class="d-flex align-items-center">
+                            <a href="tickets/Assign.html" class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
+                                Olivia Wild
+                            </a>
+                        </div>
+                        <span class="text-muted fw-semibold fs-6">
+                            <a href="mailto:oliviawild@example.com" class="text-decoration-none text-muted">oliviawild@example.com</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    1 week ago
+                </div>
+            </div>
+            <p class="fw-normal fs-5 text-gray-700 m-0">
+                Investigate system downtime issues on Monday morning.
+            </p>
+        </div>
+    </div>
+</div>
 
+<!-- Ticket 5 (Sean Bean) -->
+<div class="mb-9 position-relative">
+    <div class="card card-bordered w-100">
+        <div class="card-body position-relative">
+            <div class="dropdown position-absolute top-0 end-0 m-2">
+                
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu dropend">
+                        <a class="dropdown-item dropdown-toggle" href="#">Assign</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Karina Clark</a></li>
+                            <li><a class="dropdown-item" href="#">Robert Doe</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Priority: Info</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-100 d-flex flex-stack mb-8">
+                <div class="d-flex align-items-center">
+                    <div class="symbol symbol-50px me-5">
+                        <div class="symbol-label fs-1 fw-bold bg-light-warning text-warning">
+                            S
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column fw-semibold fs-5 text-gray-600 text-gray-900">
+                        <div class="d-flex align-items-center">
+                            <a href="tickets/Assign.html" class="text-gray-800 fw-bold text-hover-primary fs-5 me-3">
+                                Sean Bean
+                            </a>
+                        </div>
+                        <span class="text-muted fw-semibold fs-6">
+                            <a href="mailto:seanbean@example.com" class="text-decoration-none text-muted">seanbean@example.com</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    2 days ago
+                </div>
+            </div>
+            <p class="fw-normal fs-5 text-gray-700 m-0">
+                Resolve issue with user interface bug in the dashboard.
+            </p>
+        </div>
+    </div>
+</div>
 
+        </div>
+    </div>
+</div>
 
-              </div>
-              <!--end::Content container-->
+</div>
+
+<div class="modal fade" id="kt_modal_new_ticket" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Assign Tickets</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="assign-person" class="form-label">Select Person</label>
+                <select class="form-select" id="assign-person">
+                    <option value="1">Dev 1</option>
+                    <option value="2">Dev 2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ticket-priority" class="form-label">Set Priority</label>
+                <select class="form-select" id="ticket-priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+    
+            <h6>Select Tickets:</h6>
+    
+            <!-- Available Tickets -->
+            <div id="available-tickets">
+                <!-- Ticket 1 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket1" id="ticket1">
+                    <label class="form-check-label" for="ticket1">Ticket 1</label>
+                </div>
+                <!-- Ticket 2 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket2" id="ticket2">
+                    <label class="form-check-label" for="ticket2">Ticket 2</label>
+                </div>
+                <!-- Ticket 3 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket3" id="ticket3">
+                    <label class="form-check-label" for="ticket3">Ticket 3</label>
+                </div>
+                <!-- Ticket 4 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket4" id="ticket4">
+                    <label class="form-check-label" for="ticket4">Ticket 4</label>
+                </div>
+                <!-- Ticket 5 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket5" id="ticket5">
+                    <label class="form-check-label" for="ticket5">Ticket 5</label>
+                </div>
+                <!-- Ticket 6 -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ticket6" id="ticket6">
+                    <label class="form-check-label" for="ticket6">Ticket 6</label>
+                </div>
+            </div>
+    
+            <!-- Assigned Tickets (Manually Update This Section) -->
+            <h6>Assigned Tickets:</h6>
+            <div id="assigned-tickets">
+                <!-- Assigned tickets go here after selecting them -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="assign-tickets-btn">Done</button>
+        </div>
+    </div>
+         
+<script>
+document.getElementById("assign-tickets-btn").addEventListener("click", function() {
+    // Get selected values
+    const selectedPerson = document.getElementById("assign-person").value;
+    const selectedPriority = document.getElementById("ticket-priority").value;
+    
+    // Get selected tickets
+    let selectedTickets = [];
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkboxes.forEach(function(checkbox) {
+        selectedTickets.push(checkbox.id);
+    });
+    
+    // Store the selected tickets in localStorage
+    const assignedTickets = JSON.parse(localStorage.getItem('assignedTickets')) || [];
+    assignedTickets.push({
+        tickets: selectedTickets,
+        person: selectedPerson,
+        priority: selectedPriority
+    });
+    localStorage.setItem('assignedTickets', JSON.stringify(assignedTickets));
+    
+    // Redirect to assigned.html
+    window.location.href = 'tickets/assigned.html';
+});
+
+</script>
+
+    </div>
+</div>
+
+    </div>
+</div>
             </div>
             <!--end::Content-->
           </div>
@@ -503,10 +617,102 @@
       <span class="path2"></span>
     </i>
   </div>
-  <!--end::Scrolltop-->
-
   <script>
-    // Handle clicks on dropdown toggles for nested dropdowns
+  document.addEventListener("DOMContentLoaded", function () {
+    const assignButton = document.getElementById("assign-tickets-btn");
+    const assignPersonSelect = document.getElementById("assign-person");
+    const ticketTable = document.getElementById("open-tickets");
+    const ticketBody = ticketTable.querySelector("tbody");
+  
+    const assignedData = JSON.parse(localStorage.getItem('assignedTickets')) || [];
+  
+    const ticketCheckboxes = document.querySelectorAll('.form-check-input');
+    ticketCheckboxes.forEach(function (checkbox) {
+      const ticketId = checkbox.id;
+      if (assignedData.some(ticket => ticket.tickets.includes(ticketId))) {
+        checkbox.disabled = true;
+        const label = document.querySelector(`label[for=${ticketId}]`);
+        if (label) {
+          label.style.textDecoration = "line-through";
+        }
+      }
+    });
+  
+    if (assignedData.length > 0) {
+      assignedData.forEach(function (ticket) {
+        ticket.tickets.forEach(function (ticketId) {
+          const newRow = document.createElement('tr');
+          newRow.classList.add('ticket-row');
+          newRow.innerHTML = `
+            <td>${ticketId.replace('ticket', 'Ticket ')}</td>
+            <td class="assigned-to">${ticket.person}</td>
+            <td class="ticket-priority">${ticket.priority}</td>
+          `;
+          ticketBody.appendChild(newRow);
+        });
+      });
+    }
+  
+    assignButton.addEventListener('click', function () {
+      const selectedDev = assignPersonSelect.value;
+      let devName = selectedDev == '1' ? 'Dev 1' : 'Dev 2';
+      const selectedPriority = document.getElementById('ticket-priority').value;
+      let priorityClass = '';
+      let priorityText = '';
+  
+      switch (selectedPriority) {
+        case 'high':
+          priorityClass = 'bg-danger';
+          priorityText = 'High';
+          break;
+        case 'medium':
+          priorityClass = 'bg-warning';
+          priorityText = 'Medium';
+          break;
+        case 'low':
+          priorityClass = 'bg-secondary';
+          priorityText = 'Low';
+          break;
+      }
+  
+      const selectedTickets = document.querySelectorAll('.form-check-input:checked');
+      const newAssignedTickets = [];
+  
+      selectedTickets.forEach((checkbox) => {
+        const ticketId = checkbox.id;
+        newAssignedTickets.push(ticketId);
+        checkbox.disabled = true;
+        const label = document.querySelector(`label[for=${ticketId}]`);
+        if (label) {
+          label.style.textDecoration = "line-through";
+        }
+  
+        const newRow = document.createElement('tr');
+        newRow.classList.add('ticket-row');
+        newRow.innerHTML = `
+          <td>${ticketId.replace('ticket', 'Ticket ')}</td>
+          <td class="assigned-to">${devName}</td>
+          <td class="ticket-priority"><span class="badge ${priorityClass}">${priorityText}</span></td>
+        `;
+        ticketBody.appendChild(newRow);
+      });
+  
+      const allAssignedTickets = [...assignedData, { tickets: newAssignedTickets, person: devName, priority: priorityText }];
+      localStorage.setItem('assignedTickets', JSON.stringify(allAssignedTickets));
+  
+      newAssignedTickets.forEach(function(ticketId) {
+        const checkbox = document.getElementById(ticketId);
+        if (checkbox) {
+          checkbox.closest('.form-check').style.display = 'none';
+        }
+      });
+  
+      var modal = new bootstrap.Modal(document.getElementById('kt_modal_new_ticket'));
+      modal.hide();
+    });
+  });
+  </script>
+  <script>
     document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
       element.addEventListener('click', function (e) {
         e.preventDefault();
@@ -517,7 +723,6 @@
         }
       });
     });
-    // Close any open submenus when a dropdown is hidden
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('hide.bs.dropdown', function () {
         this.querySelectorAll('.dropdown-menu.show').forEach(function (submenu) {
@@ -583,4 +788,194 @@
       console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
     }
     // ]]>
-  </script>
+  </script><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <base href="../../../">
+  <title>Assign Tickets</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+  <script>
+    if (window.top != window.self) {
+      window.top.location.replace(window.self.location.href);
+    }
+  </script>
+</head>
+<body>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle m-0" id="open-tickets">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Request by</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Araceli Zhang</td>
+                    <td>info@example.com</td>
+                    <td>iPad not working.</td>
+                    <td><span class="badge bg-danger">High</span></td>
+                    <td><span class="badge bg-info">Open</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Liam Wright</td>
+                    <td>liam@example.com</td>
+                    <td>Printer issue.</td>
+                    <td><span class="badge bg-warning">Medium</span></td>
+                    <td><span class="badge bg-info">Open</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Samira Gold</td>
+                    <td>samira@example.com</td>
+                    <td>Wi-Fi connectivity issue.</td>
+                    <td><span class="badge bg-secondary">Low</span></td>
+                    <td><span class="badge bg-info">Open</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>John Rees</td>
+                    <td>john@example.com</td>
+                    <td>Software installation error.</td>
+                    <td><span class="badge bg-danger">High</span></td>
+                    <td><span class="badge bg-success">Closed</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Elena Pierce</td>
+                    <td>elena@example.com</td>
+                    <td>Login issues with account.</td>
+                    <td><span class="badge bg-warning">Medium</span></td>
+                    <td><span class="badge bg-success">Closed</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>James Thornton</td>
+                    <td>james@example.com</td>
+                    <td>Account access issue.</td>
+                    <td><span class="badge bg-danger">High</span></td>
+                    <td><span class="badge bg-success">Closed</span></td>
+                    <td>
+                      <button class="btn btn-outline-primary btn-sm action-btn" data-bs-toggle="tooltip" data-bs-title="Mark as Closed">
+                        <i class="bi bi-check-circle text-primary"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.action-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const row = button.closest('tr');
+        const tickIcon = button.querySelector('i');
+        const statusCell = row.querySelector('td:nth-child(6)');
+
+        if (statusCell.innerText === 'Closed' && !button.classList.contains('checked')) {
+          button.classList.add('checked');
+          tickIcon.classList.add('text-primary'); // Blue ticks
+          statusCell.innerHTML = '<span class="badge bg-success">Archived</span>';
+          archiveTicket(row);
+        }
+      });
+    });
+
+    function archiveTicket(row) {
+      const archivedTicket = Array.from(row.querySelectorAll('td')).map(td => td.innerText).join(',');
+
+      const archivedTickets = JSON.parse(localStorage.getItem('archivedTickets') || '[]');
+      archivedTickets.push(archivedTicket);
+      localStorage.setItem('archivedTickets', JSON.stringify(archivedTickets));
+
+      row.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

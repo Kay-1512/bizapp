@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <base href="../../../">
+  <title>Archived Tickets</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+  <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="container my-4">
+    <h3>Archived Tickets</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped align-middle m-0" id="archived-tickets">
+        <thead>
+          <tr>
+            <th>Request by</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Priority</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const archivedTickets = JSON.parse(localStorage.getItem('archivedTickets') || '[]');
+
+      const table = document.querySelector('#archived-tickets tbody');
+      archivedTickets.forEach(ticket => {
+        const newRow = document.createElement('tr');
+        ticket.split(',').forEach(data => {
+          const cell = document.createElement('td');
+          cell.textContent = data;
+          newRow.appendChild(cell);
+        });
+        table.appendChild(newRow);
+      });
+    });
+  </script>
+</body>
+</html>
